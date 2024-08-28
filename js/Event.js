@@ -78,7 +78,7 @@ BitcoinH.Event.eventTypes = [
         notification: 'positive',
         stat: 'zappower',
         value: 10,
-        text: 'Batch opened a top of lightning channels. New zappower: '
+        text: 'Batch opened a ton of lightning channels. New zappower: '
       },
     {
         type: 'SHOP',
