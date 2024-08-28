@@ -219,21 +219,31 @@ button {
   #shop {
     font-size: 8px;
     padding: 0;
+    margin-top: 0;
   }
   #attack-description {
     font-size: 8px;
     padding: 0;
+    margin-top: 0;
   }
   #runaway {
     font-size: 8px;
     padding: 0;
+    margin-top: 0;
   }
   #fight {
     font-size: 8px;
     padding: 0;
+    margin-top: 0;
   }
   #attack {
     font-size: 8px;
     padding: 0;
+    margin-top: 0;
+  }
+  .product {
+    font-size: 8px;
+    padding: 0;
+    margin-top: 0;
   }
 }
