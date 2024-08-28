@@ -47,7 +47,7 @@ BitcoinH.Game.init = function(){
 BitcoinH.Game.startJourney = function() {
   this.gameActive = true;
   this.previousTime = null;
-  this.ui.notify('Chancellor on brink of second bailout for banks! Rush to hyperbitcoinization before the national debt falls on you.', 'positive');
+  this.ui.notify('Chancellor on brink of second bailout for banks! Rush to hyperbitcoinization before the national debt falls on you.', 'neutral');
   this.step();
 };
 //game loop
