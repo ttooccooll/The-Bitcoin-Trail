@@ -179,7 +179,6 @@ button {
   .top {
     display: flex;
     flex-direction: row;
-    background: black;
     justify-content: space-between;
     width: 90%;
     height: fit-content;
