@@ -10,7 +10,6 @@ BitcoinH.UI.notify = function(message, type){
 
 //refresh visual stackers stats
 BitcoinH.UI.refreshStats = function() {
-  console.log(this.stackers);
   //modify the dom
   document.getElementById('stat-block').innerHTML = Math.ceil(this.stackers.block);
   document.getElementById('stat-distance').innerHTML = Math.floor(this.stackers.distance) + '/' + BitcoinH.FINAL_DISTANCE;
