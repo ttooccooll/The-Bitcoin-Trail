@@ -14,7 +14,7 @@ BitcoinH.UI.refreshStats = function() {
   //modify the dom
   document.getElementById('stat-block').innerHTML = Math.ceil(this.stackers.block);
   document.getElementById('stat-distance').innerHTML = Math.floor(this.stackers.distance) + '/' + BitcoinH.FINAL_DISTANCE;
-  document.getElementById('stat-crew').innerHTML = this.stackers.crew;
+  document.getElementById('stat-plebs').innerHTML = this.stackers.plebs;
   document.getElementById('stat-oxen').innerHTML = this.stackers.oxen;
   document.getElementById('stat-food').innerHTML = Math.ceil(this.stackers.food);
   document.getElementById('stat-sats').innerHTML = this.stackers.sats;
@@ -47,14 +47,14 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
     var gold = this.gold;
     var damage = Math.ceil(Math.max(0, zappower * 2 * Math.random() - this.stackers.zappower));
     //check there are survivors
-    if(damage < this.stackers.crew) {
-      this.stackers.crew -= damage;
+    if(damage < this.stackers.plebs) {
+      this.stackers.plebs -= damage;
       this.stackers.sats += gold;
       this.notify(damage + ' people were killed fighting', 'negative');
       this.notify('Found some sweet sats!' + gold);
     }
     else {
-      this.stackers.crew = 0;
+      this.stackers.plebs = 0;
       this.notify('Everybody died in the fight', 'negative');
     }
     //resume journey
@@ -66,12 +66,12 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
     var zappower = this.zappower;
     var damage = Math.ceil(Math.max(0, zappower * Math.random()/2));
     //check there are survivors
-    if(damage < this.stackers.crew) {
-      this.stackers.crew -= damage;
+    if(damage < this.stackers.plebs) {
+      this.stackers.plebs -= damage;
       this.notify(damage + ' people were killed running', 'negative');
     }
     else {
-      this.stackers.crew = 0;
+      this.stackers.plebs = 0;
       this.notify('Everybody died running away', 'negative');
     }
     //remove event listener

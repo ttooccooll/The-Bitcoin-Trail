@@ -25,7 +25,7 @@ BitcoinH.Game.init = function(){
   this.stackers.init({
     block: 1,
     distance: 0,
-    crew: 30,
+    plebs: 30,
     food: 80,
     oxen: 2,
     sats: 300,

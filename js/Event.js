@@ -6,14 +6,14 @@ BitcoinH.Event.eventTypes = [
     {
       type: 'STAT-CHANGE',
       notification: 'negative',
-      stat: 'crew',
+      stat: 'plebs',
       value: -3,
       text: 'Food intoxication. Casualties: '
     },
     {
       type: 'STAT-CHANGE',
       notification: 'negative',
-      stat: 'crew',
+      stat: 'plebs',
       value: -4,
       text: 'Covid outbreak. Casualties: '
     },
@@ -81,7 +81,7 @@ BitcoinH.Event.eventTypes = [
             {item: 'food', qty: 20, price: 50},
             {item: 'oxen', qty: 1, price: 200},
             {item: 'zappower', qty: 2, price: 50},
-            {item: 'crew', qty: 5, price: 80}
+            {item: 'plebs', qty: 5, price: 80}
         ]
         },
         {
@@ -92,7 +92,7 @@ BitcoinH.Event.eventTypes = [
             {item: 'food', qty: 30, price: 50},
             {item: 'oxen', qty: 1, price: 200},
             {item: 'zappower', qty: 2, price: 20},
-            {item: 'crew', qty: 10, price: 80}
+            {item: 'plebs', qty: 10, price: 80}
         ]
         },
         {
@@ -103,7 +103,7 @@ BitcoinH.Event.eventTypes = [
             {item: 'food', qty: 20, price: 60},
             {item: 'oxen', qty: 1, price: 300},
             {item: 'zappower', qty: 2, price: 80},
-            {item: 'crew', qty: 5, price: 60}
+            {item: 'plebs', qty: 5, price: 60}
         ]
         },
     {
