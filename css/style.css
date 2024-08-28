@@ -183,12 +183,6 @@ button {
     height: fit-content;
     margin: 0 5% 0 5%;
   }
-  /* .lime-green {
-    width: 80%;
-    margin: 10%;
-    filter: brightness(0) saturate(100%) invert(75%) sepia(74%) saturate(7500%) hue-rotate(70deg) brightness(105%) contrast(112%)
-    drop-shadow(0px 0px 10px lime);
-   } */
 
 @media screen and (max-width: 798px) {
     .su-container {
