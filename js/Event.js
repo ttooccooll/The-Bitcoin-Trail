@@ -11,6 +11,13 @@ BitcoinH.Event.eventTypes = [
       text: 'Food intoxication. Casualties: '
     },
     {
+        type: 'STAT-CHANGE',
+        notification: 'negative',
+        stat: 'plebs',
+        value: -7,
+        text: 'Many plebs die of dysentery. Casualties: '
+    },
+    {
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'plebs',
