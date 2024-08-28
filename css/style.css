@@ -209,15 +209,15 @@ button {
         margin-right: 0;
         width: 90%;
         font-size: 8px;
-        height: 50%;
-        max-height: 50%;
+        height: 60%;
+        max-height: 60%;
         margin-left: 5%;
   }
   #stats-area {
         width: 90%;
         font-size: 8px;
-        height: 50%;
-        max-height: 50%;
+        height: 40%;
+        max-height: 40%;
         margin-bottom: 10px;
         margin-top: 0;
   }
