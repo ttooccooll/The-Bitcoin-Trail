@@ -36,7 +36,7 @@ BitcoinH.Event.eventTypes = [
       notification: 'negative',
       stat: 'ostriches',
       value: -1,
-      text: 'Ox flu outbreak. Casualties: '
+      text: 'Ostrich flu outbreak. Casualties: '
     },
     {
         type: 'STAT-CHANGE',
@@ -64,7 +64,7 @@ BitcoinH.Event.eventTypes = [
       notification: 'positive',
       stat: 'ostriches',
       value: 1,
-      text: 'Found wild ostriches. New ostriches: '
+      text: 'Found wild nostriches. New ostriches: '
     },
     {
         type: 'STAT-CHANGE',
