@@ -246,4 +246,9 @@ button {
     padding: 0;
     margin-top: 0;
   }
+  #shop button {
+    font-size: 8px;
+    padding: 0;
+    margin-top: 0;
+  }
 }
