@@ -77,7 +77,7 @@ BitcoinH.Game.updateGame = function() {
   
   //game over no food
   if(this.stackers.food === 0) {
-    this.ui.notify('Your stackers starved to death', 'negative');
+    this.ui.notify('Your stackers starved to death. You lose...your cowboy hat!', 'negative');
     this.gameActive = false;
     return;
   }
@@ -96,7 +96,7 @@ BitcoinH.Game.updateGame = function() {
   }
   //check win game
   if(this.stackers.distance >= BitcoinH.FINAL_DISTANCE) {
-    this.ui.notify('You have returned home!', 'positive');
+    this.ui.notify('You achieved hyperbitcoinization. Good job. Get back to work.', 'positive');
     this.gameActive = false;
     return;
   }
