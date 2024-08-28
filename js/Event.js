@@ -76,7 +76,7 @@ BitcoinH.Event.eventTypes = [
     {
         type: 'SHOP',
         notification: 'neutral',
-        text: 'You have found a shop',
+        text: 'You have arrived at Bitcoin Beach! Pick up some supplies while you can.',
         products: [
             {item: 'food', qty: 20, price: 50},
             {item: 'oxen', qty: 1, price: 200},
@@ -87,7 +87,7 @@ BitcoinH.Event.eventTypes = [
         {
         type: 'SHOP',
         notification: 'neutral',
-        text: 'You have found a shop',
+        text: 'You made it to Bitcoin Park! Pick up some lightning channels while you are here.',
         products: [
             {item: 'food', qty: 30, price: 50},
             {item: 'oxen', qty: 1, price: 200},
@@ -98,7 +98,7 @@ BitcoinH.Event.eventTypes = [
         {
         type: 'SHOP',
         notification: 'neutral',
-        text: 'Smugglers sell various goods',
+        text: 'You made it to the Bitcoin Commons. Yee-haw! Pick up some gear.',
         products: [
             {item: 'food', qty: 20, price: 60},
             {item: 'oxen', qty: 1, price: 300},
