@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>The Bitcoin Trail</title>
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+    <div class="top">
+		<div class="sn">
+			<a class="sn" href="https://stacker.news/r/jasonb">
+                SN
+			</a>
+		</div>
+		<button class="onesat" onclick="togglePrice()">1sat=1sat</button>
+        <button class="onesat">k00b</button>
+	</div>
+    <!-- <img class="lime-green" src="images/title1.png"/> -->
+    <div id="journey">
+        <div class="su-container">
+            <div id="stats-area">
+                <div class="stat">Block <span id="stat-block" class="stat-value"></span></div>
+                <div class="stat">Crew <span id="stat-crew" class="stat-value"></span></div>
+                <div class="stat">Oxen <span id="stat-oxen" class="stat-value"></span></div>
+                <div class="stat">Food <span id="stat-food" class="stat-value"></span></div>
+                <div class="stat">Sats <span id="stat-sats" class="stat-value"></span></div>
+                <div class="stat">Zappower <span id="stat-zappower" class="stat-value"></span></div>
+                <div class="stat">Weight <span id="stat-weight" class="stat-value"></span><span id="stat-capacity" class="stat-value"></span></div>
+                <div class="stat">Distance <span id="stat-distance" class="stat-value"></span></div>
+            </div>
+            <div class="updates-area" id="updates-area"></div>
+        </div>
+      <div id="progress-area">
+        <img id="stackers" src="images/Nostrich1.png" style="width: 125px; height: 125px; margin-bottom: -20px;"/>
+        <img id="trees" src="images/Broadway3.png" style="width: 100%; height: 125px; overflow: hidden; border: darkorange solid 5px; box-shadow: 0 0 6px orange;"/>
+      </div>
+      <div id="shop" class="hidden">
+        <div id="prods"></div>
+        <button>Leave shop</button>
+      </div>
+      <div id="attack" class="hidden">
+        <button id="fight">Fight</button>
+        <button id="runaway">Run away</button>
+        <div id="attack-description"></div>
+      </div>
+    </div>
+    <script src="js/Stackers.js"></script>
+    <script src="js/Event.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/OneSat.js"></script>
+  </body>
+</html>
