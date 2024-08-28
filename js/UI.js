@@ -20,7 +20,10 @@ BitcoinH.UI.refreshStats = function() {
   document.getElementById('stat-zappower').innerHTML = this.stackers.zappower;
   document.getElementById('stat-weight').innerHTML = Math.ceil(this.stackers.weight) + '/' + this.stackers.capacity;
   //update stackers position
-  document.getElementById('stackers').style.left = (380 * this.stackers.distance/BitcoinH.FINAL_DISTANCE) + 'px';
+  var stackersElement = document.getElementById('stackers');
+  var progress = this.stackers.distance / BitcoinH.FINAL_DISTANCE;
+  stackersElement.style.right = (380 * progress) + 'px';
+  stackersElement.style.left = 'auto';
 };
 
 //show attack
