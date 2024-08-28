@@ -216,7 +216,19 @@ button {
   .onesat {
     margin-top: 10%;
   }
-  #shop #attack #fight #runaway #attack-description {
+  #shop {
+    font-size: 8px;
+  }
+  #attack-description {
+    font-size: 8px;
+  }
+  #runaway {
+    font-size: 8px;
+  }
+  #fight {
+    font-size: 8px;
+  }
+  #attack {
     font-size: 8px;
   }
 }
