@@ -29,7 +29,7 @@ BitcoinH.Game.init = function(){
     food: 80,
     ostriches: 2,
     sats: 300,
-    zappower: 1,
+    zappower: 5,
   });
   //pass references
   this.stackers.ui = this.ui;
