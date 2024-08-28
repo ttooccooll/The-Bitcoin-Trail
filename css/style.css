@@ -145,10 +145,14 @@ button {
     width: fit-content;
   }
   #fight {
-    margin: 10px
+    margin: 10px;
+    color: rgb(250 218 94);
+    text-shadow: 0 0 6px #fada5e;
   }
   #runaway {
-    margin: 10px
+    margin: 10px;
+    color: red;
+    text-shadow: 0 0 6px rgb(188, 0, 0);
   }
   #attack-description {
     margin: 20px
