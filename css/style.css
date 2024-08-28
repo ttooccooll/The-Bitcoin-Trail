@@ -104,16 +104,16 @@ button {
         height: 20%;
     }
   .update-positive {
-    color: #669966;
-    text-shadow: 0 0 6px #497549;
+    color: lime;
+    text-shadow: 0 0 6px limegreen;
   }
   .update-negative {
     color: red;
-    text-shadow: 0 0 6px rgb(117, 0, 0);
+    text-shadow: 0 0 6px rgb(188, 0, 0);
   }
   .update-neutral {
     color: #90908F;
-    text-shadow: 0 0 6px #494949;
+    text-shadow: 0 0 6px #828282;
   }
   #shop {
     float: left;
