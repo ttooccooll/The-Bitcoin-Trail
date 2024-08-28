@@ -157,6 +157,9 @@ button {
   #runaway {
     margin: 10px
   }
+  #attack-description {
+    margin: 20px
+  }
   .onesat {
     font-family: '80s';
     background: none;
