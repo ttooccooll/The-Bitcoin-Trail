@@ -226,7 +226,7 @@ button {
   .onesat {
     margin-top: 10%;
   }
-  #shop #attack #fight #runaway {
+  #shop #attack #fight #runaway #attack-description{
     font-size: 8px;
   }
 }
