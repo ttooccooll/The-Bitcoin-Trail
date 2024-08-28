@@ -115,7 +115,7 @@ BitcoinH.UI.showShop = function(products){
     var product;
     for(var i=0; i < products.length; i++) {
       product = products[i];
-      prodsDiv.innerHTML += '<div class="product" data-qty="' + product.qty + '" data-item="' + product.item + '" data-price="' + product.price + '">' + product.qty + ' ' + product.item + ' - sats' + product.price + '</div>';
+      prodsDiv.innerHTML += '<div class="product" data-qty="' + product.qty + '" data-item="' + product.item + '" data-price="' + product.price + '">' + product.qty + ' ' + product.item + ' - ' + product.price + ' sats' + '</div>';
     }
   };
   //buy product
