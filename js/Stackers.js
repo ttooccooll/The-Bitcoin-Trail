@@ -5,7 +5,7 @@ BitcoinH.Stackers.init = function(stats){
   this.distance = stats.distance;
   this.plebs = stats.plebs;
   this.food = stats.food;
-  this.oxen = stats.oxen;
+  this.ostriches = stats.ostriches;
   this.sats = stats.sats;
   this.zappower = stats.zappower;
 };
@@ -14,7 +14,7 @@ BitcoinH.Stackers.updateWeight = function(){
   let droppedFood = 0;
   let droppedLightningChannels = 0;
   //how much can the Stackers carry
-  this.capacity = this.oxen * BitcoinH.WEIGHT_PER_OX + this.plebs * BitcoinH.WEIGHT_PER_PERSON;
+  this.capacity = this.ostriches * BitcoinH.WEIGHT_PER_OX + this.plebs * BitcoinH.WEIGHT_PER_PERSON;
   //how much weight do we currently have
   this.weight = this.food * BitcoinH.FOOD_WEIGHT + this.zappower * BitcoinH.ZAPPOWER_WEIGHT;
   //drop things behind if it's too much weight

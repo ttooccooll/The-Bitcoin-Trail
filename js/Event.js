@@ -34,7 +34,7 @@ BitcoinH.Event.eventTypes = [
     {
       type: 'STAT-CHANGE',
       notification: 'negative',
-      stat: 'oxen',
+      stat: 'ostriches',
       value: -1,
       text: 'Ox flu outbreak. Casualties: '
     },
@@ -62,9 +62,9 @@ BitcoinH.Event.eventTypes = [
     {
       type: 'STAT-CHANGE',
       notification: 'positive',
-      stat: 'oxen',
+      stat: 'ostriches',
       value: 1,
-      text: 'Found wild oxen. New oxen: '
+      text: 'Found wild ostriches. New ostriches: '
     },
     {
         type: 'STAT-CHANGE',
@@ -79,7 +79,7 @@ BitcoinH.Event.eventTypes = [
         text: 'You have arrived at Bitcoin Beach! Pick up some supplies while you can.',
         products: [
             {item: 'food', qty: 20, price: 50},
-            {item: 'oxen', qty: 1, price: 200},
+            {item: 'ostriches', qty: 1, price: 200},
             {item: 'zappower', qty: 2, price: 50},
             {item: 'plebs', qty: 5, price: 80}
         ]
@@ -90,7 +90,7 @@ BitcoinH.Event.eventTypes = [
         text: 'You made it to Bitcoin Park! Pick up some lightning channels while you are here.',
         products: [
             {item: 'food', qty: 30, price: 50},
-            {item: 'oxen', qty: 1, price: 200},
+            {item: 'ostriches', qty: 1, price: 200},
             {item: 'zappower', qty: 2, price: 20},
             {item: 'plebs', qty: 10, price: 80}
         ]
@@ -101,7 +101,7 @@ BitcoinH.Event.eventTypes = [
         text: 'You made it to the Bitcoin Commons. Yee-haw! Pick up some gear.',
         products: [
             {item: 'food', qty: 20, price: 60},
-            {item: 'oxen', qty: 1, price: 300},
+            {item: 'ostriches', qty: 1, price: 300},
             {item: 'zappower', qty: 2, price: 80},
             {item: 'plebs', qty: 5, price: 60}
         ]
