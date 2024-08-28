@@ -124,7 +124,7 @@ BitcoinH.UI.showShop = function(products){
   BitcoinH.UI.buyProduct = function(product) {
     //check we can afford it
     if(product.price > BitcoinH.UI.stackers.sats) {
-      BitcoinH.UI.notify('Not enough sats', 'negative');
+      BitcoinH.UI.notify('Not enough sats. Where is your proof of work!?', 'negative');
       return false;
     }
     BitcoinH.UI.stackers.sats -= product.price;
