@@ -52,7 +52,7 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
     if(damage < this.stackers.plebs) {
       this.stackers.plebs -= damage;
       this.stackers.sats += gold;
-      this.notify(damage + ' people were killed fighting', 'negative');
+      this.notify(damage + ' plebs were killed fighting', 'negative');
       this.notify('Found some sweet sats!' + gold);
     }
     else {
@@ -70,7 +70,7 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
     //check there are survivors
     if(damage < this.stackers.plebs) {
       this.stackers.plebs -= damage;
-      this.notify(damage + ' people were killed running', 'negative');
+      this.notify(damage + ' plebs were killed running', 'negative');
     }
     else {
       this.stackers.plebs = 0;
