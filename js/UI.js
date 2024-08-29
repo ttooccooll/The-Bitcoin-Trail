@@ -152,12 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update player name and occupation in the top area
         document.querySelector('.onesat:nth-of-type(2)').textContent = playerName + " / " + occupation;
 
+        BitcoinH.Game.init(occupation);
 
         // Hide the title screen and show main game content
         document.getElementById('title-screen').style.display = 'none';
         document.getElementById('journey').style.display = 'flex';
         document.getElementById('top').style.display = 'flex';
-        BitcoinH.Game.init(occupation);
     });
 });
 
