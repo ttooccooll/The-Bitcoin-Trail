@@ -29,7 +29,7 @@ BitcoinH.Event.eventTypes = [
       notification: 'negative',
       stat: 'food',
       value: -10,
-      text: 'Worm infestation. Food lost: '
+      text: 'You just found out that much of your "food" bought from big ag was full of high fructose corn syrup. Food lost: '
     },
     {
       type: 'STAT-CHANGE',
