@@ -47,7 +47,7 @@ BitcoinH.Event.eventTypes = [
     },
     {
         type: 'STAT-CHANGE',
-        notification: 'positive',
+        notification: 'negative',
         stat: 'zappower',
         value: -10,
         text: 'FORCE CLOSE! Zappower lost: '
@@ -61,7 +61,7 @@ BitcoinH.Event.eventTypes = [
     },
     {
       type: 'STAT-CHANGE',
-      notification: 'positive',
+      notification: 'negative',
       stat: 'food',
       value: -20,
       text: 'Food seized by the government. Good thing they cannot take your bitcoin. Food lost: '
