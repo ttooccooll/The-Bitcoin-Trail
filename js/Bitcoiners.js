@@ -1,3 +1,5 @@
+var BitcoinH = BitcoinH || {};
+
 BitcoinH.OCCUPATION_INITIALS = {
     pleb: {
         plebs: 30,
