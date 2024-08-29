@@ -53,7 +53,7 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
       this.stackers.plebs -= damage;
       this.stackers.sats += gold;
       this.notify(damage + ' plebs were killed fighting.', 'negative');
-      this.notify('You got some sweet sats for orange pilling that fool!' + gold, 'positive');
+      this.notify('You got some sweet sats for orange pilling that fool! ' + gold, 'positive');
     }
     else {
       this.stackers.plebs = 0;
