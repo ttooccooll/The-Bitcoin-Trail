@@ -1,5 +1,4 @@
 var BitcoinH = BitcoinH || {};
-var occupation = document.getElementById("occupation").value;
 
 BitcoinH.WEIGHT_PER_OSTRICH = 20;
 BitcoinH.WEIGHT_PER_PERSON = 1;
@@ -17,6 +16,7 @@ BitcoinH.ENEMY_GOLD_AVG = 50;
 BitcoinH.Game = {};
 
 BitcoinH.Game.init = function(){
+  var occupation = document.getElementById("occupation").value;
   let initialValues = BitcoinH.OCCUPATION_INITIALS[occupation]
   this.ui = BitcoinH.UI;
   this.eventManager = BitcoinH.Event;
