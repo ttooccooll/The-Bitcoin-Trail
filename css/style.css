@@ -179,7 +179,7 @@ button {
     text-decoration: none;
     cursor: crosshair;
   }
-  .top {
+  #top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
