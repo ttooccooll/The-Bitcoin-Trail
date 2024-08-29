@@ -76,6 +76,7 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
     else {
       this.stackers.plebs = 0;
       this.notify('Everybody died running away', 'negative');
+      this.gameActive = false;
     }
     //resume journey
     document.getElementById('attack').classList.add('hidden');
