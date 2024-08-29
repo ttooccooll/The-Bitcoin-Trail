@@ -148,12 +148,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (occupation.toLowerCase() === 'altcoiner') {
             window.location.href = 'https://www.youtube.com/watch?v=YxjY_YTksKM';
-            return; // Stop further execution
+            return;
         }
 
         // Update player name and occupation in the top area
         document.querySelector('.onesat:nth-of-type(2)').textContent = playerName + " the " + occupation;
 
+        BitcoinH.Game.init(occupation);
         // Hide the title screen and show main game content
         document.getElementById('title-screen').style.display = 'none';
         document.getElementById('journey').style.display = 'flex';

@@ -19,6 +19,7 @@ BitcoinH.Game.init = function(){
   this.ui = BitcoinH.UI;
   this.eventManager = BitcoinH.Event;
   this.stackers = BitcoinH.Stackers;
+  const initialValues = BitcoinH.OCCUPATION_INITIALS[occupation]
   this.stackers.init({
     block: 1,
     distance: 0,

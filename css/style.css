@@ -287,8 +287,9 @@ button {
     justify-content: center;
     height: 100%;
     width: 100%;
-    background-color: #222;
+    background-color: #555;
     color: black;
+    border-radius: 50px;
     text-shadow: 0 0 6px rgb(29, 29, 29);
     text-align: center;
 }
@@ -302,7 +303,7 @@ button {
 #start-form input,
 #start-form select,
 #start-form button {
-    background-color: #555;
+    background-color: #222;
     color: lime;
     text-shadow: 0 0 6px limegreen;
     padding: 10px;
@@ -310,4 +311,5 @@ button {
     margin: 5px 0;
     font-family: '80s';
     border: none;
+    border-radius: 5px;
 }
