@@ -1,4 +1,5 @@
 var BitcoinH = BitcoinH || {};
+var occupation = document.getElementById("occupation").value;
 
 BitcoinH.WEIGHT_PER_OSTRICH = 20;
 BitcoinH.WEIGHT_PER_PERSON = 1;
@@ -20,15 +21,17 @@ BitcoinH.Game.init = function(){
   this.eventManager = BitcoinH.Event;
   this.stackers = BitcoinH.Stackers;
   const initialValues = BitcoinH.OCCUPATION_INITIALS[occupation]
-  this.stackers.init({
-    block: 1,
-    distance: 0,
-    plebs: 30,
-    food: 80,
-    ostriches: 3,
-    sats: 300,
-    zappower: 5,
-  });
+  if (initialValues) {
+    this.stackers.init({
+      block: 1,
+      distance: 0,
+      plebs: initialValues.plebs,
+      food: initialValues.food,
+      ostriches: initialValues.ostriches,
+      sats: initialValues.sats,
+      zappower: initialValues.zappower,
+    });
+  };
 
   this.stackers.ui = this.ui;
   this.stackers.eventManager = this.eventManager;
