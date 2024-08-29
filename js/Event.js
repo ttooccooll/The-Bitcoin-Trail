@@ -8,14 +8,14 @@ BitcoinH.Event.eventTypes = [
       notification: 'negative',
       stat: 'plebs',
       value: -3,
-      text: 'Food intoxication. Casualties: '
+      text: 'You ate food with pesticides on it. Casualties: '
     },
     {
-        type: 'STAT-CHANGE',
-        notification: 'negative',
-        stat: 'plebs',
-        value: -7,
-        text: 'Many plebs die of dysentery. Casualties: '
+      type: 'STAT-CHANGE',
+      notification: 'negative',
+      stat: 'plebs',
+      value: -7,
+      text: 'Many plebs die of dysentery. Casualties: '
     },
     {
       type: 'STAT-CHANGE',
@@ -46,12 +46,12 @@ BitcoinH.Event.eventTypes = [
       text: 'Ostrich flu outbreak. Casualties: '
     },
     {
-        type: 'STAT-CHANGE',
-        notification: 'negative',
-        stat: 'zappower',
-        value: -10,
-        text: 'FORCE CLOSE! Zappower lost: '
-      },
+      type: 'STAT-CHANGE',
+      notification: 'negative',
+      stat: 'zappower',
+      value: -10,
+      text: 'FORCE CLOSE! Zappower lost: '
+    },
     {
       type: 'STAT-CHANGE',
       notification: 'positive',
