@@ -135,3 +135,28 @@ BitcoinH.UI.showShop = function(products){
     //update visuals
     BitcoinH.UI.refreshStats();
   };
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('start-form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const playerName = document.getElementById('player-name').value;
+        const occupation = document.getElementById('occupation').value;
+
+        // Update player name and occupation in the top area
+        document.querySelector('.onesat:nth-of-type(2)').textContent = playerName + " the " + occupation;
+
+        // Hide the title screen and show main game content
+        document.getElementById('title-screen').style.display = 'none';
+        document.getElementById('journey').style.display = 'flex'; // Adjust to your layout needs
+    });
+});
+
+// Initial setup to hide the main content and show title screen
+window.onload = () => {
+    document.getElementById('journey').style.display = 'none'; // Hide game content initially
+    document.getElementById('title-screen').style.display = 'flex'; // Show title screen
+};

@@ -116,7 +116,7 @@ BitcoinH.Event.eventTypes = [
     {
         type: 'ATTACK',
         notification: 'negative',
-        text: 'Shit-coiners are attacking you'
+        text: 'A shit-coiner is attacking you'
       },
       {
         type: 'ATTACK',
@@ -126,7 +126,7 @@ BitcoinH.Event.eventTypes = [
       {
         type: 'ATTACK',
         notification: 'negative',
-        text: 'CSW is attacking you'
+        text: 'Craig Wright is attacking you'
       }
   ];
   

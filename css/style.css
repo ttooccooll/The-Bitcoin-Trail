@@ -269,4 +269,44 @@ button {
     margin: 0;
     border-radius: 0;
   }
+  #smalls {
+    transform: scale(0.5);
+  }
+  #start-form {
+    transform: scale(0.8);
+    }
+}
+
+
+
+
+.title-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 110vh;
+    background-color: #222;
+    color: black;
+    text-shadow: 0 0 6px rgb(29, 29, 29);
+    text-align: center;
+}
+
+#start-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#start-form input,
+#start-form select,
+#start-form button {
+    background-color: #555;
+    color: lime;
+    text-shadow: 0 0 6px limegreen;
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px 0;
+    font-family: '80s';
+    border: none;
 }

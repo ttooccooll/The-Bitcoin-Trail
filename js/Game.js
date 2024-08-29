@@ -1,6 +1,6 @@
 var BitcoinH = BitcoinH || {};
-//constants
-BitcoinH.WEIGHT_PER_OX = 20;
+
+BitcoinH.WEIGHT_PER_OSTRICH = 20;
 BitcoinH.WEIGHT_PER_PERSON = 2;
 BitcoinH.FOOD_WEIGHT = 0.6;
 BitcoinH.ZAPPOWER_WEIGHT = 5;
@@ -14,13 +14,10 @@ BitcoinH.EVENT_PROBABILITY = 0.15;
 BitcoinH.ENEMY_ZAPPOWER_AVG = 5;
 BitcoinH.ENEMY_GOLD_AVG = 50;
 BitcoinH.Game = {};
-//initiate the game
+
 BitcoinH.Game.init = function(){
-  //reference ui
   this.ui = BitcoinH.UI;
-  //reference event manager
   this.eventManager = BitcoinH.Event;
-  //setup stackers
   this.stackers = BitcoinH.Stackers;
   this.stackers.init({
     block: 1,
@@ -31,7 +28,7 @@ BitcoinH.Game.init = function(){
     sats: 300,
     zappower: 5,
   });
-  //pass references
+
   this.stackers.ui = this.ui;
   this.stackers.eventManager = this.eventManager;
   this.ui.game = this;
@@ -40,7 +37,6 @@ BitcoinH.Game.init = function(){
   this.eventManager.game = this;
   this.eventManager.stackers = this.stackers;
   this.eventManager.ui = this.ui;
-  //begin adventure!
   this.startJourney();
 };
 //start the journey and time starts running
