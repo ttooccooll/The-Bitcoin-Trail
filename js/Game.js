@@ -10,7 +10,7 @@ BitcoinH.BLOCK_PER_STEP = 1;
 BitcoinH.FOOD_PER_PERSON = 0.02;
 BitcoinH.FULL_SPEED = 5;
 BitcoinH.SLOW_SPEED = 3;
-BitcoinH.FINAL_DISTANCE = 5000;
+BitcoinH.FINAL_ADOPTION = 5000;
 BitcoinH.EVENT_PROBABILITY = 0.1;
 BitcoinH.ENEMY_ZAPPOWER_AVG = 5;
 BitcoinH.ENEMY_GOLD_AVG = 50;
@@ -24,12 +24,12 @@ BitcoinH.Game.init = function(){
   if (initialValues) {
     this.stackers.init({
       block: 1,
-      distance: 0,
       plebs: initialValues.plebs,
       food: initialValues.food,
       ostriches: initialValues.ostriches,
       sats: initialValues.sats,
       zappower: initialValues.zappower,
+      adoption: 0,
     });
   };
 
@@ -47,7 +47,8 @@ BitcoinH.Game.init = function(){
 BitcoinH.Game.startJourney = function() {
   this.gameActive = true;
   this.previousTime = null;
-  this.ui.notify('Chancellor on brink of second bailout for banks! Rush to hyperbitcoinization before the national debt falls on you.', 'neutral');
+  this.ui.notify('Chancellor on brink of second bailout for banks!', 'negative');
+  this.ui.notify('Rush to hyperbitcoinization before the national debt falls on you.', 'neutral');
   this.step();
 };
 //game loop
@@ -84,7 +85,7 @@ BitcoinH.Game.updateGame = function() {
   //update weight
   this.stackers.updateWeight();
   //update progress
-  this.stackers.updateDistance();
+  this.stackers.updateAdoption();
   //show stats
   this.ui.refreshStats();
   //check if everyone died
@@ -95,7 +96,7 @@ BitcoinH.Game.updateGame = function() {
     return;
   }
   //check win game
-  if(this.stackers.distance >= BitcoinH.FINAL_DISTANCE) {
+  if(this.stackers.adoption >= BitcoinH.FINAL_ADOPTION) {
     this.ui.notify('You achieved hyperbitcoinization. Good job. Get back to work.', 'positive');
     this.gameActive = false;
     return;

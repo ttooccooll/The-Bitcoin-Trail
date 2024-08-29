@@ -12,7 +12,7 @@ BitcoinH.UI.notify = function(message, type){
 BitcoinH.UI.refreshStats = function() {
   //modify the dom
   document.getElementById('stat-block').innerHTML = Math.ceil(this.stackers.block);
-  document.getElementById('stat-distance').innerHTML = Math.floor(this.stackers.distance) + '/' + BitcoinH.FINAL_DISTANCE;
+  document.getElementById('stat-adoption').innerHTML = Math.floor(this.stackers.adoption) + '/' + BitcoinH.FINAL_ADOPTION;
   document.getElementById('stat-plebs').innerHTML = this.stackers.plebs;
   document.getElementById('stat-ostriches').innerHTML = this.stackers.ostriches;
   document.getElementById('stat-food').innerHTML = Math.ceil(this.stackers.food);
@@ -21,7 +21,7 @@ BitcoinH.UI.refreshStats = function() {
   document.getElementById('stat-weight').innerHTML = Math.ceil(this.stackers.weight) + '/' + this.stackers.capacity;
   //update stackers position
   var stackersElement = document.getElementById('stackers');
-  var progress = this.stackers.distance / BitcoinH.FINAL_DISTANCE;
+  var progress = this.stackers.adoption / BitcoinH.FINAL_ADOPTION;
   stackersElement.style.right = (380 * progress) + 'px';
   stackersElement.style.left = 'auto';
 };

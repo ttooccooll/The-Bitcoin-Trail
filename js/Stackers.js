@@ -2,7 +2,7 @@ var BitcoinH = BitcoinH || {};
 BitcoinH.Stackers = {};
 BitcoinH.Stackers.init = function(stats){
   this.block = stats.block;
-  this.distance = stats.distance;
+  this.adoption = stats.adoption;
   this.plebs = stats.plebs;
   this.food = stats.food;
   this.ostriches = stats.ostriches;
@@ -36,12 +36,12 @@ BitcoinH.Stackers.updateWeight = function(){
     this.ui.notify('Left '+droppedFood+' food provisions behind due to a lack of plebs or ostriches to carry them.', 'negative');
   }
 };
-//update covered distance
-BitcoinH.Stackers.updateDistance = function() {
+
+BitcoinH.Stackers.updateAdoption = function() {
   //the closer to capacity, the slower
   let diff = this.capacity - this.weight;
   let speed = BitcoinH.SLOW_SPEED + diff/this.capacity * BitcoinH.FULL_SPEED;
-  this.distance += speed;
+  this.adoption += speed;
 };
 //food consumption
 BitcoinH.Stackers.consumeFood = function() {
