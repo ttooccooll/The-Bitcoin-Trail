@@ -315,6 +315,7 @@ button {
     border-radius: 5px;
     outline: none;
     transition: none;
+    appearance: none
 }
 
 ::placeholder {
