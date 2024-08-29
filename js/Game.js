@@ -32,7 +32,6 @@ BitcoinH.Game.init = function(){
       adoption: 0,
     });
   };
-
   this.stackers.ui = this.ui;
   this.stackers.eventManager = this.eventManager;
   this.ui.game = this;
