@@ -127,6 +127,26 @@ BitcoinH.Event.eventTypes = [
         type: 'ATTACK',
         notification: 'negative',
         text: 'Craig Wright is attacking you'
+      },
+      {
+        type: 'NEWS',
+        notification: 'neutral',
+        text: 'JP Morgan Bank fails.'
+      },
+      {
+        type: 'NEWS',
+        notification: 'neutral',
+        text: 'Fifth Third Bank fails.'
+      },
+      {
+        type: 'NEWS',
+        notification: 'neutral',
+        text: 'Huntington Bank fails.'
+      },
+      {
+        type: 'NEWS',
+        notification: 'neutral',
+        text: 'Bank of America fails.'
       }
   ];
   
@@ -160,6 +180,10 @@ BitcoinH.Event.eventTypes = [
 
         //prepare event
         this.attackEvent(eventData);
+    }
+    else if(eventData.type == 'NEWS') {
+        //notify user
+        this.ui.notify(eventData.text, eventData.notification);
     }
   };
   
