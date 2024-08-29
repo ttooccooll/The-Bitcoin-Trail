@@ -314,4 +314,11 @@ button {
     border: none;
     border-radius: 5px;
     outline: none;
+    transition: none;
+}
+
+::placeholder {
+  opacity: .1;
+  color: lime;
+  text-shadow: 0 0 6px limegreen;
 }
