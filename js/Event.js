@@ -56,8 +56,8 @@ BitcoinH.Event.eventTypes = [
       type: 'STAT-CHANGE',
       notification: 'positive',
       stat: 'food',
-      value: 20,
-      text: 'Found wild berries. Food added: '
+      value: 1,
+      text: 'Just for fun, you eat zee bugs. Food added: '
     },
     {
       type: 'STAT-CHANGE',
