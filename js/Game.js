@@ -25,7 +25,7 @@ BitcoinH.Game.init = function(){
     distance: 0,
     plebs: 30,
     food: 80,
-    ostriches: 2,
+    ostriches: 3,
     sats: 300,
     zappower: 5,
   });
