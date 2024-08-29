@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Update player name and occupation in the top area
-        document.querySelector('.onesat:nth-of-type(2)').textContent = playerName + " the " + occupation;
+        document.querySelector('.onesat:nth-of-type(2)').textContent = playerName + " / " + occupation;
 
         BitcoinH.Game.init(occupation);
         // Hide the title screen and show main game content
