@@ -285,7 +285,8 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 110vh;
+    height: 100%;
+    width: 100%;
     background-color: #222;
     color: black;
     text-shadow: 0 0 6px rgb(29, 29, 29);
