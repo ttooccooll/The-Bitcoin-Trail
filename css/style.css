@@ -302,7 +302,8 @@ button {
 
 #start-form input,
 #start-form select,
-#start-form button {
+#start-form button,
+#start-form input:focus {
     background-color: #222;
     color: lime;
     text-shadow: 0 0 6px limegreen;
@@ -312,4 +313,5 @@ button {
     font-family: '80s';
     border: none;
     border-radius: 5px;
+    outline: none;
 }
