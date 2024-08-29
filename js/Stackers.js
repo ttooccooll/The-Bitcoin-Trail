@@ -25,7 +25,7 @@ BitcoinH.Stackers.updateWeight = function(){
     droppedLightningChannels++;
   }
   if(droppedLightningChannels) {
-    this.ui.notify('Force closure of '+droppedLightningChannels+' lightning channels', 'negative');
+    this.ui.notify('Force closure of '+droppedLightningChannels+' lightning channels due to a lack of plebs or ostriches to operate them.', 'negative');
   }
   while(this.food && this.capacity <= this.weight) {
     this.food--;
@@ -33,7 +33,7 @@ BitcoinH.Stackers.updateWeight = function(){
     droppedFood++;
   }
   if(droppedFood) {
-    this.ui.notify('Left '+droppedFood+' food provisions behind', 'negative');
+    this.ui.notify('Left '+droppedFood+' food provisions behind due to a lack of plebs or ostriches to carry them.', 'negative');
   }
 };
 //update covered distance
