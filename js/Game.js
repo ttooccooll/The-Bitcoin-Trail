@@ -11,16 +11,16 @@ BitcoinH.FOOD_PER_PERSON = 0.02;
 BitcoinH.FULL_SPEED = 5;
 BitcoinH.SLOW_SPEED = 3;
 BitcoinH.FINAL_DISTANCE = 5000;
-BitcoinH.EVENT_PROBABILITY = 0.15;
+BitcoinH.EVENT_PROBABILITY = 0.1;
 BitcoinH.ENEMY_ZAPPOWER_AVG = 5;
 BitcoinH.ENEMY_GOLD_AVG = 50;
 BitcoinH.Game = {};
 
 BitcoinH.Game.init = function(){
+  let initialValues = BitcoinH.OCCUPATION_INITIALS[occupation]
   this.ui = BitcoinH.UI;
   this.eventManager = BitcoinH.Event;
   this.stackers = BitcoinH.Stackers;
-  const initialValues = BitcoinH.OCCUPATION_INITIALS[occupation]
   if (initialValues) {
     this.stackers.init({
       block: 1,

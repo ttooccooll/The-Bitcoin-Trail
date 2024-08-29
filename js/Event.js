@@ -146,6 +146,11 @@ BitcoinH.Event.eventTypes = [
       {
         type: 'NEWS',
         notification: 'neutral',
+        text: 'Argentina recognizes bitcoin as legal tender.'
+      },
+      {
+        type: 'NEWS',
+        notification: 'neutral',
         text: 'Bank of America fails.'
       }
   ];
