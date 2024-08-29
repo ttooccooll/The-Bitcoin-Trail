@@ -146,6 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const playerName = document.getElementById('player-name').value;
         const occupation = document.getElementById('occupation').value;
 
+        if (occupation.toLowerCase() === 'shitcoiner') {
+            window.location.href = 'https://www.youtube.com/watch?v=YxjY_YTksKM';
+            return; // Stop further execution
+        }
+
         // Update player name and occupation in the top area
         document.querySelector('.onesat:nth-of-type(2)').textContent = playerName + " the " + occupation;
 
