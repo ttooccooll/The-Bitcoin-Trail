@@ -52,12 +52,13 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
     if(damage < this.stackers.plebs) {
       this.stackers.plebs -= damage;
       this.stackers.sats += gold;
-      this.notify(damage + ' plebs were killed fighting', 'negative');
-      this.notify('Found some sweet sats!' + gold);
+      this.notify(damage + ' plebs were killed fighting.', 'negative');
+      this.notify('You got some sweet sats for orange pilling that fool!' + gold, 'positive');
     }
     else {
       this.stackers.plebs = 0;
-      this.notify('Everybody died in the fight', 'negative');
+      this.notify('Everybody died in the fight. You lose...your cowboy hat!', 'negative');
+      this.gameActive = false;
     }
     //resume journey
     document.getElementById('attack').classList.add('hidden');
