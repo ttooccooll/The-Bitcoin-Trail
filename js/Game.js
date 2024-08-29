@@ -112,5 +112,3 @@ BitcoinH.Game.resumeJourney = function() {
   this.gameActive = true;
   this.step();
 };
-//init game
-BitcoinH.Game.init();
