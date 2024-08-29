@@ -167,13 +167,13 @@ button {
     border: none;
     color: lime;
     text-shadow: 0 0 6px limegreen;
-    margin: 2%;
+    margin: 5% 2% 2% 2%;
   }
 
   .sn {
     color: rgb(250 218 94);
     text-shadow: 0 0 6px #fada5e;
-    margin: 2%;
+    margin: 5% 2% 2% 2%;
   }
   .sn a {
     text-decoration: none;
