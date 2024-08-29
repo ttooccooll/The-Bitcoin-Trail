@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Hide the title screen and show main game content
         document.getElementById('title-screen').style.display = 'none';
-        document.getElementById('journey').style.display = 'flex'; // Adjust to your layout needs
+        document.getElementById('journey').style.display = ''; // Adjust to your layout needs
     });
 });
 
