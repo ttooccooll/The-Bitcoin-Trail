@@ -36,7 +36,8 @@ button {
 }
 button:active,
 #start-form button:active,
-#shop button:active  {
+#shop button:active,
+.sn a:active  {
   opacity: 0.6;
 }
   .hidden {
