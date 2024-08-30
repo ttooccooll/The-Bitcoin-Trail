@@ -69,7 +69,7 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
   //runing away from enemy
   BitcoinH.UI.runaway = function(){
     var zappower = this.zappower;
-    var damage = Math.ceil(Math.max(0, zappower * Math.random()/2));
+    var damage = Math.ceil(Math.max(0, zappower * Math.random()/4));
     //check there are survivors
     if(damage < this.stackers.plebs) {
       this.stackers.plebs -= damage;
