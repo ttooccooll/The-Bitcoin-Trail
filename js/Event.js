@@ -15,7 +15,7 @@ BitcoinH.Event.eventTypes = [
       notification: 'negative',
       stat: 'plebs',
       value: -14,
-      text: 'Many plebs die of dysentery. Casualties: '
+      text: 'Many plebs die of dysentery. Hey, it is an Oregon Train parody. What do you want?! Casualties: '
     },
     {
       type: 'STAT-CHANGE',
