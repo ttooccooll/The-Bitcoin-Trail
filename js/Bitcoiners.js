@@ -1,27 +1,27 @@
 BitcoinH.OCCUPATION_INITIALS = {
     pleb: {
-        plebs: 80,
+        plebs: 40,
         food: 200,
         ostriches: 8,
         sats: 200,
         zappower: 4,
     },
     miner: {
-        plebs: 20,
+        plebs: 10,
         food: 120,
         ostriches: 6,
         sats: 1000,
         zappower: 10,
     },
     developer: {
-        plebs: 70,
+        plebs: 35,
         food: 80,
         ostriches: 4,
         sats: 20,
         zappower: 20,
     },
     educator: {
-        plebs: 100,
+        plebs: 50,
         food: 190,
         ostriches: 8,
         sats: 240,
