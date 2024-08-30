@@ -220,6 +220,10 @@ button:active,
   .pic {
     height: 200px;
   }
+  .events {
+    max-height: 35%;
+    float: inline-end;
+  }
 
 @media screen and (max-width: 700px) {
     .su-container {
