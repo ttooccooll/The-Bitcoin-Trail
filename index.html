@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="title-screen" class="title-screen">
+      <img id="smalls" class="logo" src="images/bitcoinlogo.webp" style="height: 300px;"/>
         <h1 id="smalls" >Welcome to</h1>
         <img id="smalls" src="images/title1.png" style="margin-bottom: 30px;"/>
         <form id="start-form">
@@ -61,7 +62,7 @@
         <div id="attack-description"></div>
       </div>
       <div id="gameover" class="hidden">
-        <button id="startover">Play again?</button>
+        <button id="startover" onClick="window.location.reload();">Play again?</button>
       </div>
     </div>
     <script src="js/Stackers.js"></script>

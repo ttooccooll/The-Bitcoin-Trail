@@ -286,6 +286,9 @@ button:active,
   #smalls {
     transform: scale(0.5);
   }
+  .logo {
+    margin: -50px;
+  }
   #start-form {
     transform: scale(0.8);
     }
