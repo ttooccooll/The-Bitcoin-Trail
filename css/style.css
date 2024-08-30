@@ -220,7 +220,7 @@ button:active,
     height: 200px;
   }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 700px) {
     .su-container {
         flex-direction: column;
         align-items: space-around;
@@ -309,6 +309,9 @@ button:active,
   }
   #start-form {
     transform: scale(0.8);
+    }
+    .pic {
+      height: 150px;
     }
 }
 
