@@ -7,28 +7,28 @@ BitcoinH.Event.eventTypes = [
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'plebs',
-      value: -3,
+      value: -6,
       text: 'You ate food with pesticides on it. Casualties: '
     },
     {
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'plebs',
-      value: -7,
+      value: -14,
       text: 'Many plebs die of dysentery. Casualties: '
     },
     {
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'plebs',
-      value: -4,
+      value: -14,
       text: 'Covid outbreak. Casualties: '
     },
     {
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'food',
-      value: -10,
+      value: -20,
       text: 'You just found out that much of your "food" bought from big ag was full of high fructose corn syrup. Food lost: '
     },
     {
@@ -49,7 +49,7 @@ BitcoinH.Event.eventTypes = [
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'zappower',
-      value: -10,
+      value: -20,
       text: 'FORCE CLOSE! Zappower lost: '
     },
     {
@@ -63,7 +63,7 @@ BitcoinH.Event.eventTypes = [
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'food',
-      value: -20,
+      value: -40,
       text: 'Food seized by the government. Good thing they cannot take your bitcoin. Food lost: '
     },
     {
@@ -77,7 +77,7 @@ BitcoinH.Event.eventTypes = [
         type: 'STAT-CHANGE',
         notification: 'positive',
         stat: 'zappower',
-        value: 10,
+        value: 20,
         text: 'Batch opened a ton of lightning channels. New zappower: '
       },
     {
