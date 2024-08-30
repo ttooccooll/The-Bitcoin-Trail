@@ -113,7 +113,7 @@ BitcoinH.Event.eventTypes = [
             {item: 'plebs', qty: 5, price: 60}
         ]
         },
-    {
+      {
         type: 'ATTACK',
         notification: 'negative',
         text: 'A shit-coiner is attacking you'
