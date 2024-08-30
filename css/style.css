@@ -314,6 +314,9 @@ button:active,
     .pic {
       height: 150px;
     }
+  #top {
+    font-size: 8px;
+  }
 }
 
 
