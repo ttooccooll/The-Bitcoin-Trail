@@ -33,7 +33,7 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
     //keep properties
     this.zappower = zappower;
     this.gold = gold;
-    document.getElementById('attack-description').innerHTML = 'Zappower: ' + zappower;
+    document.getElementById('attack-description').innerHTML = 'Enemy zap resistance: ' + zappower;
     //init once
     if(!this.attackInitiated) {
       //fight
@@ -59,6 +59,8 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
       this.stackers.plebs = 0;
       this.notify('Everybody died in the fight. You lose...your cowboy hat!', 'negative');
       this.gameActive = false;
+      var gameoverDiv = document.getElementById('gameover');
+      gameoverDiv.classList.remove('hidden');
     }
     //resume journey
     document.getElementById('attack').classList.add('hidden');
@@ -77,6 +79,8 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
       this.stackers.plebs = 0;
       this.notify('Everybody died running away', 'negative');
       this.gameActive = false;
+      var gameoverDiv = document.getElementById('gameover');
+      gameoverDiv.classList.remove('hidden');
     }
     //resume journey
     document.getElementById('attack').classList.add('hidden');

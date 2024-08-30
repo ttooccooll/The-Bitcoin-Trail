@@ -18,7 +18,7 @@ BitcoinH.OCCUPATION_INITIALS = {
         food: 40,
         ostriches: 1,
         sats: 10,
-        zappower: 5,
+        zappower: 15,
     },
     educator: {
         plebs: 50,

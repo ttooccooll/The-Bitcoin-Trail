@@ -79,6 +79,8 @@ BitcoinH.Game.updateGame = function() {
   if(this.stackers.food === 0) {
     this.ui.notify('Your stackers starved to death. You lose...your cowboy hat!', 'negative');
     this.gameActive = false;
+    var gameoverDiv = document.getElementById('gameover');
+    gameoverDiv.classList.remove('hidden');
     return;
   }
   //update weight
@@ -92,12 +94,16 @@ BitcoinH.Game.updateGame = function() {
     this.stackers.crew = 0;
     this.ui.notify('Everybody Died!!! You lose...your cowboy hat!', 'negative');
     this.gameActive = false;
+    var gameoverDiv = document.getElementById('gameover');
+    gameoverDiv.classList.remove('hidden');
     return;
   }
   //check win game
   if(this.stackers.adoption >= BitcoinH.FINAL_ADOPTION) {
     this.ui.notify('You achieved hyperbitcoinization. Good job. Get back to work.', 'positive');
     this.gameActive = false;
+    var gameoverDiv = document.getElementById('gameover');
+    gameoverDiv.classList.remove('hidden');
     return;
   }
   //random events

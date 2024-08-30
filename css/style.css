@@ -34,6 +34,11 @@ button {
     text-shadow: 0 0 6px limegreen;
     cursor: crosshair;
 }
+button:active,
+#start-form button:active,
+#shop button:active  {
+  opacity: 0.6;
+}
   .hidden {
     display: none;
   }
@@ -190,6 +195,11 @@ button {
     width: 90%;
     height: fit-content;
     margin: 0 5% 0 5%;
+  }
+  #gameover {
+    margin: 10px;
+    margin-left: 5%;
+    padding: 10px;
   }
 
 @media screen and (max-width: 990px) {
