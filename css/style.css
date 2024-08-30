@@ -87,6 +87,8 @@ button:active,
     font-size: 12px;
     overflow-y: scroll;
     max-height: 100%;
+    line-height: 1em;
+    max-height: calc(1em * 10);
   }
   #updates-area::-webkit-scrollbar {
     width: 8px; /* Width of the scrollbar */
@@ -114,14 +116,17 @@ button:active,
   .update-positive {
     color: lime;
     text-shadow: 0 0 6px limegreen;
+    margin: 5px 0 5px 0;
   }
   .update-negative {
     color: red;
     text-shadow: 0 0 6px rgb(188, 0, 0);
+    margin: 5px 0 5px 0;
   }
   .update-neutral {
     color: #90908F;
     text-shadow: 0 0 6px #828282;
+    margin: 5px 0 5px 0;
   }
   #shop {
     float: left;
@@ -221,8 +226,8 @@ button:active,
     height: 200px;
   }
   .events {
-    max-height: 35%;
-    float: inline-end;
+    display: flex;
+    align-items: flex-end;
   }
 
 @media screen and (max-width: 700px) {
