@@ -64,6 +64,7 @@ button:active,
     left: 0;
   }
   #stats-area {
+    border: lime solid 5px; box-shadow: 0 0 6px limegreen; border-radius: 5px;
     color: lime;
     text-shadow: 0 0 6px limegreen;
     float: left;
