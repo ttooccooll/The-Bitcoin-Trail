@@ -68,7 +68,7 @@ button:active,
     text-shadow: 0 0 6px limegreen;
     float: left;
     height: fit-content;
-    width: 25%;
+    width: 35%;
     margin: 10px;
     margin-left: 5%;
     padding: 10px;
@@ -148,6 +148,10 @@ button:active,
     float: left;
     margin: 5px;
   }
+  #prods {
+    display: flex;
+    flex-direction: column;
+  }
   #attack {
     float: left;
     color: lime;
@@ -157,6 +161,16 @@ button:active,
     padding: 10px;
     height: 60px;
     width: fit-content;
+  }
+  #withimage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
   }
   #fight {
     margin: 10px;
@@ -202,8 +216,11 @@ button:active,
     margin-left: 5%;
     padding: 10px;
   }
+  .pic {
+    height: 200px;
+  }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 890px) {
     .su-container {
         flex-direction: column;
         align-items: space-around;
