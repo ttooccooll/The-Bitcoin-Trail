@@ -65,7 +65,7 @@ BitcoinH.Game.step = function(timestamp) {
     this.updateGame();
   }
   
-  //we use "bind" so that we can refer to the context "this" inside of the step method
+  //use "bind" to refer to the context "this" inside of the step method
   if(this.gameActive) window.requestAnimationFrame(this.step.bind(this));
 };
 //update game stats
