@@ -82,6 +82,14 @@ BitcoinH.Game.updateGame = function() {
     var gameoverDiv = document.getElementById('gameover');
     gameoverDiv.classList.remove('hidden');
     return;
+  };
+    //game over no plebs
+  if(this.stackers.food === 0) {
+    this.ui.notify('Your stackers have all been vanquished. You lose...your cowboy hat!', 'negative');
+    this.gameActive = false;
+    var gameoverDiv = document.getElementById('gameover');
+    gameoverDiv.classList.remove('hidden');
+    return;
   }
   //update weight
   this.stackers.updateWeight();
