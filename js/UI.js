@@ -64,7 +64,9 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
     }
     //resume journey
     document.getElementById('attack').classList.add('hidden');
-    this.game.resumeJourney();
+    if(this.stackers.plebs > 0) {
+      this.game.resumeJourney();
+    }
   };
   //runing away from enemy
   BitcoinH.UI.runaway = function(){
@@ -84,7 +86,9 @@ BitcoinH.UI.showAttack = function(zappower, gold) {
     }
     //resume journey
     document.getElementById('attack').classList.add('hidden');
-    this.game.resumeJourney();
+    if(this.stackers.plebs > 0) {
+      this.game.resumeJourney();
+    }
   };
 
   //show shop
