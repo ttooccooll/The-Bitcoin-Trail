@@ -7,21 +7,21 @@ BitcoinH.Event.eventTypes = [
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'plebs',
-      value: -6,
+      value: -5,
       text: 'You ate food with pesticides on it. Casualties: '
     },
     {
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'plebs',
-      value: -14,
+      value: -13,
       text: 'Many plebs die of dysentery. Hey, it is an Oregon Train parody. What do you want?! Casualties: '
     },
     {
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'plebs',
-      value: -14,
+      value: -4,
       text: 'Covid outbreak. Casualties: '
     },
     {
