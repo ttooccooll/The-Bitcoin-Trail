@@ -80,6 +80,13 @@ BitcoinH.Event.eventTypes = [
         value: 20,
         text: 'Batch opened a ton of lightning channels. New zappower: '
       },
+      {
+        type: 'STAT-CHANGE',
+        notification: 'negative',
+        stat: 'zappower',
+        value: -5,
+        text: 'Power outage! Node offline! Zappower lost: '
+      },
     {
         type: 'SHOP',
         notification: 'neutral',
