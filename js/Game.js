@@ -2,7 +2,7 @@ var BitcoinH = BitcoinH || {};
 
 BitcoinH.WEIGHT_PER_OSTRICH = 20;
 BitcoinH.WEIGHT_PER_PERSON = 1;
-BitcoinH.FOOD_WEIGHT = 0.6;
+BitcoinH.FOOD_WEIGHT = 0.5;
 BitcoinH.ZAPPOWER_WEIGHT = 5;
 BitcoinH.GAME_SPEED = 80;
 BitcoinH.BLOCK_PER_STEP = 1;
