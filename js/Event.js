@@ -87,7 +87,7 @@ BitcoinH.Event.eventTypes = [
         value: -5,
         text: 'Power outage! Node offline! Zappower lost: '
       },
-    {
+      {
         type: 'SHOP',
         notification: 'neutral',
         text: 'You have arrived at Bitcoin Beach! Pick up some supplies while you can.',
@@ -97,6 +97,17 @@ BitcoinH.Event.eventTypes = [
             {item: 'zappower', qty: 2, price: 50},
             {item: 'plebs', qty: 5, price: 80}
         ]
+        },
+        {
+          type: 'SHOP',
+          notification: 'neutral',
+          text: 'You have arrived at Bitcoin Jungle! Pick up some supplies while you can.',
+          products: [
+              {item: 'food', qty: 30, price: 50},
+              {item: 'ostriches', qty: 2, price: 200},
+              {item: 'zappower', qty: 2, price: 30},
+              {item: 'plebs', qty: 5, price: 90}
+          ]
         },
         {
         type: 'SHOP',
