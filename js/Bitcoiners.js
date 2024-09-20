@@ -27,6 +27,13 @@ BitcoinH.OCCUPATION_INITIALS = {
         sats: 240,
         zappower: 3,
     },
+    nomad: {
+        plebs: 1,
+        food: 25,
+        ostriches: 1,
+        sats: 540,
+        zappower: 1,
+    },
     altcoiner: {
         plebs: 0,
         food: 0,
