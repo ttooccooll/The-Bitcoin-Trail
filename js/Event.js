@@ -174,6 +174,11 @@ BitcoinH.Event.eventTypes = [
       {
         type: 'NEWS',
         notification: 'neutral',
+        text: 'Microstrategy bought more bitcoin. Blah blah blah'
+      },
+      {
+        type: 'NEWS',
+        notification: 'neutral',
         text: 'Bank of America fails.'
       }
   ];
