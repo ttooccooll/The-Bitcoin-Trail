@@ -164,6 +164,11 @@ BitcoinH.Event.eventTypes = [
       {
         type: 'NEWS',
         notification: 'neutral',
+        text: 'Wells Fargo Bank fails.'
+      },
+      {
+        type: 'NEWS',
+        notification: 'neutral',
         text: 'Argentina recognizes bitcoin as legal tender.'
       },
       {
