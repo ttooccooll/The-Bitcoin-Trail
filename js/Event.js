@@ -47,6 +47,13 @@ BitcoinH.Event.eventTypes = [
     },
     {
       type: 'STAT-CHANGE',
+      notification: 'positive',
+      stat: 'ostriches',
+      value: 2,
+      text: 'You spun up a new relay. New nostriches: '
+    },
+    {
+      type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'zappower',
       value: -20,
