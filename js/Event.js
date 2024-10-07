@@ -154,6 +154,11 @@ BitcoinH.Event.eventTypes = [
         text: 'Craig Wright is attacking you'
       },
       {
+        type: 'ATTACK',
+        notification: 'negative',
+        text: 'The IMF is attacking you'
+      },
+      {
         type: 'NEWS',
         notification: 'neutral',
         text: 'JP Morgan Bank fails.'
