@@ -76,6 +76,13 @@ BitcoinH.Event.eventTypes = [
     {
       type: 'STAT-CHANGE',
       notification: 'positive',
+      stat: 'food',
+      value: 50,
+      text: 'You start your own homestead. Food added: '
+    },
+    {
+      type: 'STAT-CHANGE',
+      notification: 'positive',
       stat: 'ostriches',
       value: 1,
       text: 'Found wild nostriches. New ostriches: '
