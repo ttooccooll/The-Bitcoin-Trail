@@ -170,6 +170,11 @@ BitcoinH.Event.eventTypes = [
       {
         type: 'ATTACK',
         notification: 'negative',
+        text: 'Jamie Diamond is attacking you'
+      },
+      {
+        type: 'ATTACK',
+        notification: 'negative',
         text: 'The IMF is attacking you'
       },
       {
