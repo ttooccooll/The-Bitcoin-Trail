@@ -185,6 +185,11 @@ BitcoinH.Event.eventTypes = [
       {
         type: 'NEWS',
         notification: 'neutral',
+        text: 'New York Community Bank fails.'
+      },
+      {
+        type: 'NEWS',
+        notification: 'neutral',
         text: 'Fifth Third Bank fails.'
       },
       {
