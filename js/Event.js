@@ -130,6 +130,17 @@ BitcoinH.Event.eventTypes = [
               {item: 'plebs', qty: 10, price: 180}
           ]
           },
+          {
+            type: 'SHOP',
+            notification: 'neutral',
+            text: 'You have arrived at Riga! Pick up some supplies while you can.',
+            products: [
+                {item: 'food', qty: 10, price: 50},
+                {item: 'ostriches', qty: 1, price: 225},
+                {item: 'zappower', qty: 2, price: 75},
+                {item: 'plebs', qty: 5, price: 90}
+            ]
+            },
         {
           type: 'SHOP',
           notification: 'neutral',
