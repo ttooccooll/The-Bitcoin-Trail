@@ -205,6 +205,11 @@ BitcoinH.Event.eventTypes = [
         text: 'The IMF is attacking you'
       },
       {
+        type: 'ATTACK',
+        notification: 'negative',
+        text: 'Janet Yellen is attacking you'
+      },
+      {
         type: 'NEWS',
         notification: 'neutral',
         text: 'JP Morgan Bank fails.'
