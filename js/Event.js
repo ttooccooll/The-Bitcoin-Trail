@@ -262,6 +262,11 @@ BitcoinH.Event.eventTypes = [
       {
         type: 'NEWS',
         notification: 'neutral',
+        text: 'Bhutan recognizes bitcoin as legal tender.'
+      },
+      {
+        type: 'NEWS',
+        notification: 'neutral',
         text: 'Bank of America fails.'
       }
   ];
