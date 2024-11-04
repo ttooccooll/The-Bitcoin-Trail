@@ -267,6 +267,11 @@ BitcoinH.Event.eventTypes = [
       {
         type: 'NEWS',
         notification: 'neutral',
+        text: 'Singapore recognizes bitcoin as legal tender.'
+      },
+      {
+        type: 'NEWS',
+        notification: 'neutral',
         text: 'Bank of America fails.'
       }
   ];
