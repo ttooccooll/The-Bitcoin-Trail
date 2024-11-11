@@ -75,6 +75,13 @@ BitcoinH.Event.eventTypes = [
     },
     {
       type: 'STAT-CHANGE',
+      notification: 'positive',
+      stat: 'food',
+      value: 40,
+      text: 'Bumper harvest! Food added: '
+    },
+    {
+      type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'food',
       value: -40,
