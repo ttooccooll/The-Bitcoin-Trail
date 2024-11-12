@@ -176,7 +176,7 @@ BitcoinH.Event.eventTypes = [
         text: 'You made it to the Bitcoin Commons. Yee-haw! Pick up some gear.',
         products: [
             {item: 'food', qty: 20, price: 60},
-            {item: 'ostriches', qty: 1, price: 300},
+            {item: 'ostriches', qty: 2, price: 300},
             {item: 'zappower', qty: 2, price: 80},
             {item: 'plebs', qty: 5, price: 60}
         ]
