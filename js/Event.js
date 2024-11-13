@@ -214,6 +214,11 @@ BitcoinH.Event.eventTypes = [
       {
         type: 'ATTACK',
         notification: 'negative',
+        text: 'The World Bank is attacking you'
+      },
+      {
+        type: 'ATTACK',
+        notification: 'negative',
         text: 'Janet Yellen is attacking you'
       },
       {
