@@ -345,22 +345,14 @@ BitcoinH.Event.eventTypes = [
   };
 
   BitcoinH.Event.shopEvent = function(eventData) {
-    //number of products for sale
-    var numProds = Math.ceil(Math.random() * 4);
-    //product list
-    var products = [];
-    var j, priceFactor;
-    for(var i = 0; i < numProds; i++) {
-      //random product
-      j = Math.floor(Math.random() * eventData.products.length);
-      //multiply price by random factor +-30%
-      priceFactor = 0.7 + 0.6 * Math.random();
-      products.push({
-        item: eventData.products[j].item,
-        qty: eventData.products[j].qty,
-        price: Math.round(eventData.products[j].price * priceFactor)
-      });
-    }
+    var products = eventData.products.map(function(product) {
+      var priceFactor = 0.7 + 0.6 * Math.random();
+      return {
+        item: product.item,
+        qty: product.qty,
+        price: Math.round(product.price * priceFactor)
+      };
+    });
     this.ui.showShop(products);
   };
 
