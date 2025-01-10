@@ -221,7 +221,7 @@ button:active,
     flex-direction: row;
     justify-content: space-around;
   }
-  .options {
+  .options, .optionz {
     display: flex;
     flex-direction: column;
     align-items: start;
