@@ -3,6 +3,50 @@
     src: url('../fonts/codegon.ttf') format('truetype');
 }
 
+.title-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #555;
+  color: black;
+  border-radius: 50px;
+  text-shadow: 0 0 6px rgb(29, 29, 29);
+  text-align: center;
+}
+
+#start-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#start-form input,
+#start-form select,
+#start-form button,
+#start-form input:focus {
+  background-color: #222;
+  color: lime;
+  text-shadow: 0 0 6px limegreen;
+  padding: 10px;
+  font-size: 16px;
+  margin: 5px 0;
+  font-family: '80s';
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: none;
+  appearance: none
+}
+
+::placeholder {
+opacity: .1;
+color: lime;
+text-shadow: 0 0 6px limegreen;
+}
+
 html {
     height: 100%;
     background: rgb(22, 22, 22);
@@ -128,6 +172,10 @@ button:active,
     text-shadow: 0 0 6px #828282;
     margin: 5px 0 5px 0;
   }
+  .update-neutral a {
+    color: rgb(250 218 94);
+    text-shadow: 0 0 6px #fada5e;
+  }
   #shop {
     float: left;
     color: lime;
@@ -191,6 +239,43 @@ button:active,
   #attack-description {
     margin: 20px
   }
+  #tombstone {
+    float: left;
+    color: #90908F;
+    box-shadow: 0 5px 6px 10px #828282;
+    margin: 30px;
+    margin-left: 5%;
+    padding: 10px;
+    padding-bottom: 80px;
+    height: fit-content;
+    width: 30%;
+    background-color: #828282;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+  #epitaph {
+    text-align: center;
+    float: left;
+    color: #242424;
+    text-shadow: 0 0 6px #383838;
+    margin: 10px;
+    margin-left: 5%;
+    padding: 10px 0 0 0;
+    height: 150px;
+    width: fit-content;
+  }
+  #epitaph a {
+    color: rgb(47, 45, 40);
+    text-shadow: 0 0 6px #323029;
+  }
+  #payrespects, #continue {
+    color: #90908F;
+    text-shadow: 0 0 6px #828282;
+    margin-left: 90px;
+    padding: 10px;
+    height: 90px;
+    width: fit-content;
+  }
   .onesat {
     font-family: '80s';
     background: none;
@@ -229,6 +314,19 @@ button:active,
     display: flex;
     align-items: flex-end;
   }
+  
+@media screen and (max-width: 960px) {
+  #epitaph {
+    padding-top: 10%;
+    font-size: 10px;
+  }
+  #tombstone {
+    width: 50%;
+  }
+  #payrespects, #continue {
+    margin-left: 10vw;
+  }
+}
 
 @media screen and (max-width: 700px) {
     .su-container {
@@ -292,6 +390,15 @@ button:active,
     padding: 0;
     margin-top: 0;
   }
+  #tombstone {
+    font-size: 8px;
+    padding: 0;
+    margin-top: 0;
+  }
+  #epitaph {
+    font-size: 8px;
+    margin-top: 0;
+  }
   .product {
     font-size: 8px;
     padding: 0;
@@ -329,51 +436,4 @@ button:active,
   .onesat {
     font-size: 8px;
   }
-}
-
-
-
-
-.title-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    background-color: #555;
-    color: black;
-    border-radius: 50px;
-    text-shadow: 0 0 6px rgb(29, 29, 29);
-    text-align: center;
-}
-
-#start-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-#start-form input,
-#start-form select,
-#start-form button,
-#start-form input:focus {
-    background-color: #222;
-    color: lime;
-    text-shadow: 0 0 6px limegreen;
-    padding: 10px;
-    font-size: 16px;
-    margin: 5px 0;
-    font-family: '80s';
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    transition: none;
-    appearance: none
-}
-
-::placeholder {
-  opacity: .1;
-  color: lime;
-  text-shadow: 0 0 6px limegreen;
 }

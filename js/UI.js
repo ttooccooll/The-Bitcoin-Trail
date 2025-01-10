@@ -143,7 +143,27 @@ BitcoinH.UI.showShop = function(products){
     //update visuals
     BitcoinH.UI.refreshStats();
   };
-
+  BitcoinH.UI.showTombstone = function(eventData) {
+    var tombstoneDiv = document.getElementById('tombstone');
+    tombstoneDiv.classList.remove('hidden');
+    var epitaphHtml = '';
+    eventData.epitaph.forEach(function(line) {
+        epitaphHtml += line.text + '<br>';
+    });
+    document.getElementById('epitaph').innerHTML = epitaphHtml;
+    if(!this.tombstoneInitiated) {
+      document.getElementById('payrespects').addEventListener('click', this.payrespects.bind(this));
+      document.getElementById('continue').addEventListener('click', this.continue.bind(this));
+      this.tombstoneInitiated = true;
+    }
+  };
+  BitcoinH.UI.continue = function(){
+    document.getElementById('tombstone').classList.add('hidden');
+    this.game.resumeJourney();
+  };
+  BitcoinH.UI.payrespects = function(){
+    window.open('https://stacker.news/OneOneSeven', '_blank');
+  };
 
 
 document.addEventListener('DOMContentLoaded', () => {
