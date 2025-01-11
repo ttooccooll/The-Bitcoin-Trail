@@ -9,7 +9,7 @@ BitcoinH.OCCUPATION_INITIALS = {
     node_runner: {
         plebs: 5,
         food: 25,
-        ostriches: 1,
+        ostriches: 3,
         sats: 350,
         zappower: 30,
     },
