@@ -307,6 +307,16 @@ BitcoinH.Event.eventTypes = [
           {text: '"I’ll see you in another life brother"'}
         ]
       },
+      {
+        type: 'TOMBSTONE',
+        notification: 'neutral',
+        text: 'You have come accross the tombstone of <a href="https://stacker.news/jasonb" target="_blank">@jasonb</a>',
+        epitaph: [
+          {text: 'Here lies <a href="https://stacker.news/jasonb" target="_blank">@jasonb</a></br>'},
+          {text: 'Hey, I am not at all above shilling from beyond the grave.</br>'},
+          {text: '"You too can have a tombstone for the low, low price of 1000 sats. Enquire with me on stacker.news."'}
+        ]
+      },
   ];
   
   BitcoinH.Event.generateEvent = function(){
