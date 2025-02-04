@@ -28,8 +28,15 @@ BitcoinH.Event.eventTypes = [
       type: 'STAT-CHANGE',
       notification: 'negative',
       stat: 'plebs',
-      value: 30,
+      value: 20,
       text: 'NGU! Oh no, now everyone wants to be a bitcoiner. New plebs: '
+    },
+    {
+      type: 'STAT-CHANGE',
+      notification: 'negative',
+      stat: 'plebs',
+      value: -5,
+      text: 'BTC/USD price crash! Oh no, we just shook out the traders. Plebs lost: '
     },
     {
       type: 'STAT-CHANGE',
