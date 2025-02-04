@@ -314,7 +314,7 @@ BitcoinH.Event.eventTypes = [
         epitaph: [
           {text: 'Here lies <a href="https://stacker.news/jasonb" target="_blank">@jasonb</a></br>'},
           {text: 'Hey, I am not at all above shilling from beyond the grave.</br>'},
-          {text: '"You too can have a tombstone for the low, low price of 1000 sats. Enquire with me on stacker.news."'}
+          {text: '"You too can have a tombstone for the low, low price of 1000 sats. Enquire with me at my profile on stacker.news."'}
         ]
       },
   ];
