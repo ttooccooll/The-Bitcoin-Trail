@@ -151,6 +151,7 @@ BitcoinH.UI.showShop = function(products){
         epitaphHtml += line.text + '<br>';
     });
     document.getElementById('epitaph').innerHTML = epitaphHtml;
+    this.currentTombstoneLink = eventData.link;
     if(!this.tombstoneInitiated) {
       document.getElementById('payrespects').addEventListener('click', this.payrespects.bind(this));
       document.getElementById('continue').addEventListener('click', this.continue.bind(this));
@@ -162,7 +163,7 @@ BitcoinH.UI.showShop = function(products){
     this.game.resumeJourney();
   };
   BitcoinH.UI.payrespects = function(){
-    window.open('https://stacker.news/OneOneSeven', '_blank');
+    window.open(this.currentTombstoneLink);
   };
 
 
