@@ -305,6 +305,11 @@ BitcoinH.Event.eventTypes = [
         text: 'Bank of America fails.'
       },
       {
+        type: 'NEWS',
+        notification: 'neutral',
+        text: 'Cowboy credits reach all time high on coin market cap.'
+      },
+      {
         type: 'TOMBSTONE',
         notification: 'neutral',
         text: 'You have come accross the tombstone of <a href="https://stacker.news/OneOneSeven" target="_blank">@OneOneSeven</a>',
