@@ -324,6 +324,34 @@ BitcoinH.Event.eventTypes = [
       {
         type: 'TOMBSTONE',
         notification: 'neutral',
+        text: 'You have come accross the tombstone of <a href="https://stacker.news/grayruby" target="_blank">@grayruby</a>',
+        epitaph: [
+          {text: 'Here lies <a href="https://stacker.news/grayruby" target="_blank">@grayruby</a></br>'},
+          {text: 'Loving territory founder of <a href="https://stacker.news/~Stacker_Sports" target="_blank">Stacker_Sports</a></br>'},
+        ],
+        link: 'https://stacker.news/grayruby',
+        linkText: '@grayruby'
+      },
+      {
+        type: 'TOMBSTONE',
+        notification: 'neutral',
+        text: 'You have come accross the tombstone of <a href="https://stacker.news/siggy47" target="_blank">@siggy47</a>',
+        epitaph: [
+          {text: 'Here lies <a href="https://stacker.news/siggy47" target="_blank">@siggy47</a></br>'},
+          {text: 'Loving territory founder of <a href="https://stacker.news/~BooksAndArticles" target="_blank">BooksAndArticles</a>, <a href="https://stacker.news/~bitcoin_beginners" target="_blank">bitcoin_beginners</a>, <a href="https://stacker.news/~Politics_And_Law" target="_blank">Politics_And_Law</a>, and <a href="https://stacker.news/~Animal_World" target="_blank">Animal_World</a></br>'},
+          {text: 'Siggy47 loved his dogs and his cats,'},
+          {text: 'He wrote about freedom, he wrote about sats'},
+          {text: 'A family man, he`d oft share a little,'},
+          {text: 'Collaborating with Darth Coin, his skin thick, not brittle,'},
+          {text: 'He studied law and the Grateful Dead'},
+          {text: 'But when pushed to share much, he`d say, "Nice try fed."'},
+        ],
+        link: 'https://stacker.news/siggy47',
+        linkText: '@siggy47'
+      },
+      {
+        type: 'TOMBSTONE',
+        notification: 'neutral',
         text: 'You have come accross the tombstone of <a href="https://stacker.news/jasonb" target="_blank">@jasonb</a>',
         epitaph: [
           {text: 'Here lies <a href="https://stacker.news/jasonb" target="_blank">@jasonb</a></br>'},
@@ -332,6 +360,34 @@ BitcoinH.Event.eventTypes = [
         ],
         link: 'https://stacker.news/jasonb',
         linkText: '@jasonb'
+      },
+      {
+        type: 'TOMBSTONE',
+        notification: 'neutral',
+        text: 'You have come accross the tombstone of <a href="https://stacker.news/~Stacker_Sports" target="_blank">@Stacker_Sports</a>',
+        epitaph: [
+          {text: 'Here lies <a href="https://stacker.news/~Stacker_Sports" target="_blank">@Stacker_Sports</a></br>'},
+        ],
+        link: 'https://stacker.news/~Stacker_Sports',
+        linkText: '@Stacker_Sports'
+      },
+      {
+        type: 'TOMBSTONE',
+        notification: 'neutral',
+        text: 'You have come accross the tombstone of <a href="https://stacker.news/nerd2ninja" target="_blank">@nerd2ninja</a>',
+        epitaph: [
+          {text: 'Here lies <a href="https://stacker.news/nerd2ninja" target="_blank">@nerd2ninja</a></br>'},
+          {text: 'For the crime of writing guides to aid criminals and terrorists worldwide operate and use unregistered money transmitting services; sentenced to prison</br>'},
+          {text: 'Served life in prison for contempt of court refusing to give up seed phrase</br>'},
+          {text: 'Bitcoin was in a timelocked multi-signature wallet. The new owners of the Bitcoin are unknown and at large</br>'},
+          {text: 'Famous last words:'},
+          {text: '"It matters not how strait the gate,'},
+          {text: 'How charged with punishments the scroll,'},
+          {text: 'I am the master of my fate,'},
+          {text: 'I am the captain of my soul."'}
+        ],
+        link: 'https://stacker.news/nerd2ninja',
+        linkText: '@nerd2ninja'
       },
   ];
   

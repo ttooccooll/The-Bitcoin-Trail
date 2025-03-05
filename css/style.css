@@ -62,9 +62,9 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 94%;
+    height: 97%;
     width: 96%;
-    margin: 2%;
+    margin: 1%;
     overflow: hidden;
     font-family: '80s';
     background: black;
@@ -261,7 +261,7 @@ button:active,
     margin: 10px;
     margin-left: 5%;
     padding: 10px 0 0 0;
-    height: 150px;
+    height: fit-content;
     width: fit-content;
   }
   #epitaph a {
