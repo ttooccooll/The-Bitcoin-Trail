@@ -1,8 +1,9 @@
 var BitcoinH = BitcoinH || {};
 
-BitcoinH.Event = {};
+BitcoinH.Event = {
+  usedEvents: [],
 
-BitcoinH.Event.eventTypes = [
+  eventTypes: [
     {
       type: 'STAT-CHANGE',
       notification: 'negative',
@@ -389,60 +390,75 @@ BitcoinH.Event.eventTypes = [
         link: 'https://stacker.news/nerd2ninja',
         linkText: '@nerd2ninja'
       },
-  ];
+    ],
+
+    generateEvent: function(){
+      var unusedEvents = this.eventTypes.filter(event => !this.usedEvents.includes(event));
+      if (unusedEvents.length === 0) {
+        this.usedEvents = [];
+        unusedEvents = this.eventTypes;
+      }
+      var eventIndex = Math.floor(Math.random() * unusedEvents.length);
+      var eventData = unusedEvents[eventIndex];
+      this.usedEvents.push(eventData);
+      this.handleEvent(eventData);
+    },
   
-  BitcoinH.Event.generateEvent = function(){
-    var eventIndex = Math.floor(Math.random() * this.eventTypes.length);
-    var eventData = this.eventTypes[eventIndex];
-    if(eventData.type == 'STAT-CHANGE') {
-      this.stateChangeEvent(eventData);
-    }
-    else if(eventData.type == 'SHOP') {
-        this.game.pauseJourney();
-        this.ui.notify(eventData.text, eventData.notification);
-        this.shopEvent(eventData);
-    }
-    else if(eventData.type == 'ATTACK') {
-        this.game.pauseJourney();
-        this.ui.notify(eventData.text, eventData.notification);
-        this.attackEvent(eventData);
-    }
-    else if(eventData.type == 'NEWS') {
-        this.ui.notify(eventData.text, eventData.notification);
-    }
-    else if(eventData.type == 'TOMBSTONE') {
-      this.game.pauseJourney();
-      this.ui.notify(eventData.text, eventData.notification);
-      this.tombstoneEvent(eventData);
-  }
-  };
+    handleEvent: function(eventData) {
+      switch(eventData.type) {
+        case 'STAT-CHANGE':
+          this.stateChangeEvent(eventData);
+          break;
+        case 'SHOP':
+          this.game.pauseJourney();
+          this.ui.notify(eventData.text, eventData.notification);
+          this.shopEvent(eventData);
+          break;
+        case 'ATTACK':
+          this.game.pauseJourney();
+          this.ui.notify(eventData.text, eventData.notification);
+          this.attackEvent(eventData);
+          break;
+        case 'NEWS':
+          this.ui.notify(eventData.text, eventData.notification);
+          break;
+        case 'TOMBSTONE':
+          this.game.pauseJourney();
+          this.ui.notify(eventData.text, eventData.notification);
+          this.tombstoneEvent(eventData);
+          break;
+        default:
+          console.warn('Unknown event type:', eventData.type);
+      }
+    },
   
-  BitcoinH.Event.stateChangeEvent = function(eventData) {
-    if(eventData.value + this.stackers[eventData.stat] >= 0) {
-      this.stackers[eventData.stat] += eventData.value;
-      this.ui.notify(eventData.text + Math.abs(eventData.value), eventData.notification);
+    stateChangeEvent: function(eventData) {
+      if(eventData.value + this.stackers[eventData.stat] >= 0) {
+        this.stackers[eventData.stat] += eventData.value;
+        this.ui.notify(eventData.text + Math.abs(eventData.value), eventData.notification);
+      }
+    },
+  
+    shopEvent: function(eventData) {
+      var products = eventData.products.map(function(product) {
+        var priceFactor = 0.7 + 0.6 * Math.random();
+        return {
+          item: product.item,
+          qty: product.qty,
+          price: Math.round(product.price * priceFactor)
+        };
+      });
+      this.ui.showShop(products);
+    },
+  
+    attackEvent: function(eventData){
+      var zappower = Math.round((0.7 + 0.6 * Math.random()) * BitcoinH.ENEMY_ZAPPOWER_AVG);
+      var gold = Math.round((0.7 + 0.6 * Math.random()) * BitcoinH.ENEMY_GOLD_AVG);
+      this.ui.showAttack(zappower, gold);
+    },
+  
+    tombstoneEvent: function(eventData){
+      var linkHtml = '<a href="' + eventData.link + '" target="_blank">' + eventData.linkText + '</a>';
+      this.ui.showTombstone(eventData, linkHtml);
     }
-  };
-
-  BitcoinH.Event.shopEvent = function(eventData) {
-    var products = eventData.products.map(function(product) {
-      var priceFactor = 0.7 + 0.6 * Math.random();
-      return {
-        item: product.item,
-        qty: product.qty,
-        price: Math.round(product.price * priceFactor)
-      };
-    });
-    this.ui.showShop(products);
-  };
-
-  BitcoinH.Event.attackEvent = function(eventData){
-    var zappower = Math.round((0.7 + 0.6 * Math.random()) * BitcoinH.ENEMY_ZAPPOWER_AVG);
-    var gold = Math.round((0.7 + 0.6 * Math.random()) * BitcoinH.ENEMY_GOLD_AVG);
-    this.ui.showAttack(zappower, gold);
-  };
-
-  BitcoinH.Event.tombstoneEvent = function(eventData){
-    var linkHtml = '<a href="' + eventData.link + '" target="_blank">' + eventData.linkText + '</a>';
-    this.ui.showTombstone(eventData, linkHtml);
   };
