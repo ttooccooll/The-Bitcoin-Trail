@@ -452,3 +452,13 @@ BitcoinH.Event = {
     },
   
     attackEvent: function(eventData){
+      var zappower = Math.round((0.7 + 0.6 * Math.random()) * BitcoinH.ENEMY_ZAPPOWER_AVG);
+      var gold = Math.round((0.7 + 0.6 * Math.random()) * BitcoinH.ENEMY_GOLD_AVG);
+      this.ui.showAttack(zappower, gold);
+    },
+  
+    tombstoneEvent: function(eventData){
+      var linkHtml = '<a href="' + eventData.link + '" target="_blank">' + eventData.linkText + '</a>';
+      this.ui.showTombstone(eventData, linkHtml);
+    }
+  };
