@@ -1,85 +1,70 @@
 var BitcoinH = BitcoinH || {};
 
-// starting supplies, perk and score multiplier for each kind of bitcoiner
-BitcoinH.OCCUPATION_INITIALS = {
-    pleb: {
-        plebs: 40,
-        food: 200,
-        ostriches: 9,
-        sats: 200,
-        zappower: 2,
-        multiplier: 1.5,
-        perk: 'Humble and numerous. Morale recovers faster.',
-    },
-    node_runner: {
-        plebs: 5,
-        food: 25,
-        ostriches: 3,
-        sats: 350,
-        zappower: 30,
-        multiplier: 2,
-        perk: 'Don\'t trust, verify. Loses half as much zappower to force closes and outages.',
-    },
-    miner: {
+// who you can be, what you start with and how many points you deserve
+BitcoinH.OCCUPATIONS = [
+    {
+        key: 'miner',
+        title: 'Be a miner from Texas',
+        name: 'miner',
+        sats: 8000,
         plebs: 10,
-        food: 120,
-        ostriches: 7,
-        sats: 1000,
-        zappower: 5,
         multiplier: 1,
-        perk: 'Earns a block subsidy every block (it halves, obviously). Mining minigame pays double.',
+        perk: 'Miners collect a block subsidy every day on the trail.'
     },
-    developer: {
-        plebs: 35,
-        food: 80,
-        ostriches: 5,
-        sats: 20,
-        zappower: 10,
-        multiplier: 2,
-        perk: 'Reviews the enemy\'s code. Enemies have 30% less zap resistance.',
-    },
-    educator: {
-        plebs: 50,
-        food: 190,
-        ostriches: 9,
-        sats: 240,
-        zappower: 3,
+    {
+        key: 'pleb',
+        title: 'Be a pleb from Ohio',
+        name: 'pleb',
+        sats: 4000,
+        plebs: 40,
         multiplier: 1.5,
-        perk: 'Orange pills defeated enemies. Winning a fight can recruit new plebs.',
+        perk: 'Plebs travel with the biggest crowd of followers.'
     },
-    nomad: {
+    {
+        key: 'educator',
+        title: 'Be an educator from Nashville',
+        name: 'educator',
+        sats: 4000,
+        plebs: 50,
+        multiplier: 1.5,
+        perk: 'Educators orange pill the folks they talk to, and sometimes the folks they fight.'
+    },
+    {
+        key: 'node_runner',
+        title: 'Be a node runner from Riga',
+        name: 'node runner',
+        sats: 3000,
+        plebs: 5,
+        multiplier: 2,
+        perk: 'Node runners can usually repair broken node parts.'
+    },
+    {
+        key: 'developer',
+        title: 'Be a developer from a basement',
+        name: 'developer',
+        sats: 2500,
+        plebs: 35,
+        multiplier: 2,
+        perk: 'Developers review the enemy\'s code, so enemies are weaker.'
+    },
+    {
+        key: 'nomad',
+        title: 'Be a nomad from El Salvador',
+        name: 'nomad',
+        sats: 2000,
         plebs: 1,
-        food: 25,
-        ostriches: 2,
-        sats: 540,
-        zappower: 1,
         multiplier: 3,
-        perk: 'Geo-arbitrage. Travels 20% faster and pays 15% less at trading posts.',
+        perk: 'Nomads travel light and fast, and pay less at the forts.'
     },
-    altcoiner: {
-        plebs: 0,
-        food: 0,
-        ostriches: 0,
+    {
+        key: 'altcoiner',
+        title: 'Be an altcoiner',
+        name: 'altcoiner',
         sats: 0,
-        zappower: 0,
+        plebs: 0,
         multiplier: 0,
-        perk: 'Have fun staying poor.',
+        perk: ''
     }
-};
-
-BitcoinH.OCCUPATION_NAMES = {
-    pleb: 'Pleb',
-    node_runner: 'Node Runner',
-    miner: 'Miner',
-    developer: 'Developer',
-    educator: 'Educator',
-    nomad: 'Nomad',
-    altcoiner: 'Altcoiner'
-};
-
-BitcoinH.RANDOM_NYMS = [
-    'Satoshi Nakamoto', 'Hal Finney', 'Pleb McStackface', 'Laszlo', 'Hodlonaut',
-    'Nostrich Rider', 'Cypherpunk Cathy', 'Ser Stacksalot', 'Timechain Tim',
-    'Low Time Preference', 'Sats Sorcerer', 'Node Nana', 'Lightning Larry',
-    'Cold Storage Carl', 'Orange Pill Olivia', 'Fiat Fugitive', 'Block 840000'
 ];
+
+BitcoinH.DEFAULT_NAMES = ['Satoshi', 'Hal', 'Nick', 'Adam', 'Wei', 'Len', 'Gavin', 'Laszlo', 'Amir', 'Mike', 'Greg', 'Pieter', 'Luke', 'Jameson', 'Lyn', 'Elizabeth'];

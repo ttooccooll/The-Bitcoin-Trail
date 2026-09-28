@@ -1,40 +1,35 @@
 # The Bitcoin Trail
 
-An Oregon Trail parody. Lead your caravan of plebs and ostriches from the fiat wasteland to hyperbitcoinization, or lose your cowboy hat trying.
+A parody of a certain 1985 computer lab classic. Lead your party of five from the Genesis Block across 2,100 miles of fiat wasteland to Hyperbitcoinization Valley, or die of dysentery trying.
 
 Open `index.html` in a browser (or serve the folder with any static file server) and play. No build step, no dependencies.
 
-## How to play
+## On the trail
 
-- **Pick a kind of bitcoiner.** Each one has different starting supplies, a perk and a score multiplier. The harder the start, the bigger the multiplier.
-- **Set your pace.** Stroll, Stack or Full Send. Going faster costs morale, and sometimes costs plebs.
-- **Set your rations.** Carnivore, Normal or Fasting. More food means happier plebs, and happy plebs walk faster. When morale collapses, plebs rage quit to go gamble on memecoins.
-- **Mine a block.** This is the game's version of hunting: land the nonce under the difficulty target to earn the block reward. The subsidy halves every halving, and the difficulty rises with every block you find.
-- **Reach the landmarks.** Pizza Day, Mt. Gox, the Blocksize Wars, Bitcoin Beach, Lugano and more. Each one brings a decision, a trading post or some news.
-- **Survive what the trail throws at you.** Attacks from the fiat mafia (fight, pay them off or run), mempool congestion, giveaway scams, tombstones of fallen stackers and plenty of other decisions.
-
-Your score depends on who and what made it to the end, how fast you got there, and your occupation multiplier. The top five scores and 18 achievements are saved in your browser.
+- **Pick who you are.** A miner from Texas has plenty of sats. A nomad from El Salvador has almost none, but earns triple points.
+- **Name your party.** Then watch them come down with dysentery, cholera, FOMO and shitcoin fever.
+- **Shop at Satoshi's General Store.** Buy ostriches, food, tinfoil hats, zaps and spare node parts. The farther west you go, the more the forts charge.
+- **Press ENTER to size up the situation.** Check supplies, look at the map, change pace and rations, rest, trade or hunt.
+- **Cross rivers of unconfirmed transactions.** Ford them, caulk the wagon and float across, or pay the ferry's priority fee. Watch the mempool depth.
+- **Hunt bulls and bears.** You can only carry 100 pounds back to the wagon.
+- **Stop at the landmarks and forts.** Pizza Day, Mt. Gox, Satoshi's Last Email, the Blocksize Wars, Bitcoin Beach, Riga, Lugano and more.
+- **Survive the fiat mafia.** Orange pill them, pay them off, or run.
+- **At Wall Street, pick your finish.** Raft down the Lightning Rapids, or pay for the Layer 1 Toll Road.
+- **Make it, and see your points.** Survivors, supplies and sats all count, and you land on the HODL Top Ten.
+- **Die, and write your epitaph.** Future travelers will find your grave on the trail.
 
 ## Controls
 
-| Key | Action |
-| --- | --- |
-| Space | Pause / resume (or hash, during mining) |
-| M | Mine a block |
-| P | Change pace |
-| R | Change rations |
-| S | Toggle sound |
-| 1-9 | Pick an option in any dialog |
+Type the number of your choice and press ENTER, or tap it. SPACE BAR continues. When hunting, use the arrows or mouse to aim and SPACE or a tap to shoot. On the rapids, steer with the arrows or hold either side of the screen.
 
 ## Code map
 
-- `js/Bitcoiners.js`: occupations, perks and random nyms
-- `js/Stackers.js`: the caravan's stats, pace, rations, weight and morale
-- `js/Event.js`: random events, decisions, tombstones and landmarks
-- `js/Game.js`: game loop, halvings, landmarks, scoring and controls
-- `js/UI.js`: rendering, dialogs, shop, fights and the game over screen
-- `js/Minigame.js`: the proof-of-work minigame
-- `js/Achievements.js`: achievements and high scores
-- `js/Sound.js`: music tracks and synthesized sound effects
-- `js/FX.js`: screen shake, lightning, sparks and coin confetti
+- `js/Bitcoiners.js`: occupations and default party names
+- `js/Stackers.js`: your party, supplies, health, illness, weather and the calendar
+- `js/Event.js`: trail events, tombstones, landmarks, fort talk and trades
+- `js/UI.js`: the green screen: menus, prompts, the travel screen and tombstones
+- `js/Game.js`: the whole journey, from the title screen to the Top Ten
+- `js/Hunt.js`: the hunting minigame and the pixel sprites
+- `js/Raft.js`: the Lightning Rapids
+- `js/Sound.js`: the music and the one-bit speaker beeps
 - `js/OneSat.js`: live block height, fee and price ticker from mempool.space
