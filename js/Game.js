@@ -138,7 +138,7 @@ BitcoinH.Game = {
         header: list,
         question: i === 0 ? 'What is the first name of the wagon leader?' : (i + 1) + '.',
         maxLength: 12,
-        hint: 'Type a name and press ENTER, or just press ENTER for ' + defaults[i],
+        hint: 'Leave it blank for ' + defaults[i] + '.',
         fn: function(value) {
           names.push(value || defaults[i]);
           askNext();

@@ -136,6 +136,8 @@ button {
   line-height: 1.15;
   cursor: default;
   user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 #screen p {
   margin: 0 0 1.2em 0;
@@ -278,6 +280,10 @@ table.topten td:nth-child(2) {
 table.topten td:last-child {
   text-align: left;
 }
+.hint {
+  color: var(--phosphor-dim);
+  margin: 0.4em 0 0.8em 0;
+}
 .names {
   margin: 0 0 0.8em 1.5em;
   padding-left: 1.5em;
@@ -333,7 +339,7 @@ table.topten td:last-child {
 }
 .scene {
   position: relative;
-  height: 46%;
+  aspect-ratio: 204 / 72;
   flex: none;
   border: 2px solid var(--phosphor);
   box-shadow: var(--glow);
@@ -499,9 +505,6 @@ table.status td:first-child {
   .badge {
     bottom: 8px;
   }
-  .scene {
-    height: 30%;
-  }
   .opt .item {
     width: 10ch;
   }
@@ -516,5 +519,86 @@ table.status td:first-child {
   }
   .stone {
     width: 85%;
+  }
+}
+
+/* ---------- touch screens: big targets, buttons instead of keys ---------- */
+
+body.touch .opt {
+  padding: 0.45em 0.4em;
+  margin: 0 0 0.25em 0;
+  border: 1px dashed var(--phosphor-dim);
+}
+body.touch .opt:active,
+body.touch .press:active,
+body.touch .yn span:active {
+  background: var(--phosphor);
+  color: #000;
+  text-shadow: none;
+}
+body.touch .options {
+  margin-left: 0;
+}
+body.touch .opt .item {
+  width: auto;
+}
+body.touch .opt .cost {
+  width: auto;
+  float: right;
+}
+body.touch .press {
+  margin-top: 0.5em;
+  padding: 0.6em 0.4em;
+  border: 2px solid var(--phosphor);
+  box-shadow: var(--glow);
+}
+body.touch .hunt-help {
+  border: none;
+  box-shadow: none;
+  padding: 0.2em 0;
+}
+body.touch .cursor,
+body.touch .typed {
+  display: none;
+}
+body.touch .yn {
+  display: flex;
+  gap: 1em;
+}
+body.touch .yn span.yes,
+body.touch .yn span.no {
+  flex: 1;
+  text-align: center;
+  padding: 0.7em 0;
+  border: 2px solid var(--phosphor);
+  box-shadow: var(--glow);
+}
+body.touch .ask input {
+  /* 16px or more stops phones from zooming in on the field */
+  font-size: max(16px, 1em);
+  width: 100%;
+  margin-top: 0.3em;
+  padding: 0.3em 0.2em;
+  border-bottom: 2px solid var(--phosphor);
+}
+body.touch .size-up {
+  padding: 0.5em 0;
+  border: 2px solid var(--phosphor);
+  box-shadow: var(--glow);
+}
+body.touch .message .press {
+  border-width: 1px;
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+  #screen {
+    font-size: 4.1cqw;
+    line-height: 1.25;
+  }
+  table.status {
+    font-size: 0.92em;
+  }
+  table.status td:last-child {
+    white-space: normal;
   }
 }

@@ -12,8 +12,17 @@ BitcoinH.Screen = {
 
   init: function() {
     this.el = document.getElementById('screen');
+    //phones and tablets get taps instead of keys
+    this.touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    if(this.touch) document.body.classList.add('touch');
     document.addEventListener('keydown', this.onKey.bind(this));
     this.el.addEventListener('click', this.onTap.bind(this));
+  },
+
+  //on a touch screen, "Press SPACE BAR" becomes "Tap here"
+  label: function(text) {
+    if(!this.touch) return text;
+    return text.replace(/Press (SPACE BAR|ENTER)/g, 'Tap here');
   },
 
   show: function(html, handler) {
@@ -46,7 +55,7 @@ BitcoinH.Screen = {
       next();
     };
     this.show('<div class="page">' + html + '</div>' +
-      '<div class="press">' + (prompt || 'Press SPACE BAR to continue') + '</div>', {
+      '<div class="press">' + this.label(prompt || 'Press SPACE BAR to continue') + '</div>', {
       key: function(e) { if(e.key === ' ' || e.key === 'Enter') go(); },
       tap: go
     });
@@ -61,8 +70,9 @@ BitcoinH.Screen = {
       html += '<div class="opt" data-i="' + i + '"><span class="num">' + (i + 1) + '.</span> ' + option.label + '</div>';
     });
     html += '</div>' + (opts.footer || '') + '</div>' +
-      '<div class="ask">' + (opts.question || 'What is your choice?') + ' <span class="typed"></span><span class="cursor"></span></div>' +
-      (opts.escape ? '<div class="press">' + opts.escape.label + '</div>' : '');
+      '<div class="ask">' + (this.touch && !opts.question ? 'Tap your choice.' : (opts.question || 'What is your choice?')) +
+      ' <span class="typed"></span><span class="cursor"></span></div>' +
+      (opts.escape ? '<div class="press">' + this.label(opts.escape.label) + '</div>' : '');
     var screen = this;
     var choose = function(i) {
       var option = opts.options[i];
@@ -100,10 +110,14 @@ BitcoinH.Screen = {
 
   //type an answer and press ENTER
   ask: function(opts) {
-    var html = '<div class="page">' + (opts.header || '') + '</div>' +
-      '<div class="ask">' + opts.question + ' <input type="' + (opts.number ? 'text" inputmode="numeric' : 'text') +
-      '" maxlength="' + (opts.maxLength || 20) + '" autocomplete="off" spellcheck="false" value="' + escapeHtml(opts.value || '') + '"/></div>' +
-      '<div class="press">' + (opts.hint || 'Press ENTER when done') + '</div>';
+    var ask = '<div class="ask">' + opts.question + ' <input type="' + (opts.number ? 'text" inputmode="numeric' : 'text') +
+      '" maxlength="' + (opts.maxLength || 20) + '" autocomplete="off" autocapitalize="words" spellcheck="false" enterkeyhint="done" value="' + escapeHtml(opts.value || '') + '"/></div>' +
+      (opts.hint ? '<div class="hint">' + opts.hint + '</div>' : '');
+    var done = '<div class="press">' + this.label('Press ENTER when done') + '</div>';
+    //on phones the question sits up top, where the keyboard can't cover it
+    var html = this.touch ?
+      '<div class="page">' + (opts.header || '') + ask + done + '</div>' :
+      '<div class="page">' + (opts.header || '') + '</div>' + ask + done;
     var screen = this;
     var submit = function() {
       var value = screen.el.querySelector('input').value.trim();
@@ -136,8 +150,10 @@ BitcoinH.Screen = {
       screen.handler = null;
       fn(yes);
     };
-    this.show('<div class="page">' + html + '</div>' +
-      '<div class="ask yn"><span class="yes">Y</span>/<span class="no">N</span> <span class="cursor"></span></div>', {
+    var buttons = this.touch ?
+      '<div class="ask yn"><span class="yes">Yes</span><span class="no">No</span></div>' :
+      '<div class="ask yn"><span class="yes">Y</span>/<span class="no">N</span> <span class="cursor"></span></div>';
+    this.show('<div class="page">' + html + '</div>' + buttons, {
       key: function(e) {
         var k = e.key.toLowerCase();
         if(k !== 'y' && k !== 'n') return;
@@ -266,7 +282,7 @@ BitcoinH.Travel = {
       ['Next landmark:', next ? Math.max(0, next.miles - s.miles) + ' miles' : ''],
       ['Miles traveled:', s.miles.toLocaleString()]
     ];
-    return '<div class="size-up">Press ENTER to size up the situation</div>' +
+    return '<div class="size-up">' + BitcoinH.Screen.label('Press ENTER to size up the situation') + '</div>' +
       '<table class="status">' + rows.map(function(r) {
         return '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>';
       }).join('') + '</table>';
@@ -286,7 +302,7 @@ BitcoinH.Travel = {
     this.messageShowing = true;
     this.update(false);
     bottom.innerHTML = '<div class="message"><div class="message-text">' + text + '</div>' +
-      '<div class="press">Press ENTER to continue</div></div>';
+      '<div class="press">' + BitcoinH.Screen.label('Press ENTER to continue') + '</div></div>';
     BitcoinH.Sound.beep();
     var done = false;
     var go = function() {

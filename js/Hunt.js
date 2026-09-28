@@ -108,7 +108,7 @@ BitcoinH.Hunt = {
     BitcoinH.Screen.show(
       '<div class="hunt"><canvas id="hunt-canvas" width="' + this.W + '" height="' + this.H + '"></canvas>' +
       '<div class="hunt-hud"><span id="hunt-zaps"></span><span id="hunt-time"></span></div>' +
-      '<div class="press hunt-help">Arrows or mouse to aim. SPACE or tap to shoot. ENTER to stop.</div></div>', {
+      '<div class="press hunt-help">' + (BitcoinH.Screen.touch ? 'Tap where you want to shoot.' : 'Arrows or mouse to aim. SPACE or click to shoot. ENTER to stop.') + '</div></div>', {
         key: this.key.bind(this)
       });
     this.canvas = document.getElementById('hunt-canvas');

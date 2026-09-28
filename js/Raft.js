@@ -21,7 +21,7 @@ BitcoinH.Raft = {
     BitcoinH.Screen.show(
       '<div class="raft"><canvas id="raft-canvas" width="' + this.W + '" height="' + this.H + '"></canvas>' +
       '<div class="hunt-hud"><span id="raft-miles"></span></div>' +
-      '<div class="press hunt-help">LEFT and RIGHT arrows (or hold either side) to steer around the rocks.</div></div>', {
+      '<div class="press hunt-help">' + (BitcoinH.Screen.touch ? 'Hold the left or right side to steer around the rocks.' : 'LEFT and RIGHT arrows to steer around the rocks.') + '</div></div>', {
         key: this.key.bind(this)
       });
     this.canvas = document.getElementById('raft-canvas');
