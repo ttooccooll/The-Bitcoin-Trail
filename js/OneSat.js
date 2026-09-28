@@ -7,7 +7,7 @@ async function fetchPrice() {
 	try {
 		const response = await fetch('https://mempool.space/api/v1/prices');
 		const data = await response.json();
-		usdPrice = data.USD.toFixed();
+		usdPrice = Number(data.USD.toFixed()).toLocaleString();
 	} catch (error) {
 		console.error('Error fetching the price:', error);
 	}
@@ -15,11 +15,11 @@ async function fetchPrice() {
 
 async function fetchBlock() {
 	try {
-		const response = await fetch('https://blockchain.info/q/getblockcount');
+		const response = await fetch('https://mempool.space/api/blocks/tip/height');
 		const data = await response.text();
-		blockHeight = parseInt(data).toFixed(0);
+		blockHeight = parseInt(data).toLocaleString();
 	} catch (error) {
-		console.error('Error fetching the price:', error);
+		console.error('Error fetching the block height:', error);
 	}
 }
 
@@ -28,33 +28,28 @@ async function fetchFee() {
 		const response = await fetch('https://mempool.space/api/v1/fees/recommended');
 		const data = await response.json();
 		satFee = data.halfHourFee.toFixed();
-		console.log(satFee);
 	} catch (error) {
-		console.error('Error fetching the price:', error);
+		console.error('Error fetching the fee:', error);
 	}
 }
 
 async function togglePrice() {
-	if (!usdPrice) {
-		await fetchPrice();
-	}
-	if (!blockHeight) {
-		await fetchBlock();
-	}
-	if (!satFee) {
-		await fetchFee();
-	}
+	const pending = [];
+	if (!usdPrice) pending.push(fetchPrice());
+	if (!blockHeight) pending.push(fetchBlock());
+	if (!satFee) pending.push(fetchFee());
+	await Promise.all(pending);
 
-	const button = document.querySelector('.onesat');
+	const button = document.getElementById('ticker');
 	switch (toggleState) {
 		case 0:
-			button.textContent = `${blockHeight}`;
+			button.textContent = `Block ${blockHeight || '?'}`;
 			break;
 		case 1:
-			button.textContent = `${satFee} sat/vB`;
+			button.textContent = `${satFee || '?'} sat/vB`;
 			break;
 		case 2:
-			button.textContent = `$${usdPrice}`;
+			button.textContent = `$${usdPrice || '?'}`;
 			break;
 		case 3:
 			button.textContent = '1sat=1sat';

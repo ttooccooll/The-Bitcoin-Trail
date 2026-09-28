@@ -1,99 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="The Bitcoin Trail: an Oregon Trail parody. Ride your ostriches from the fiat wasteland to hyperbitcoinization."/>
+    <meta name="theme-color" content="#000000"/>
     <title>The Bitcoin Trail</title>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="icon" href="images/bitcoinlogo.webp" />
   </head>
   <body>
-    <audio id="sound-theme" src="sounds/theme.m4a"></audio>
-    <audio id="sound-attack" src="sounds/fight.m4a"></audio>
-    <audio id="sound-town" src="sounds/town.m4a"></audio>
+    <audio id="sound-theme" src="sounds/theme.m4a" loop preload="auto"></audio>
+    <audio id="sound-attack" src="sounds/fight.m4a" preload="auto"></audio>
+    <audio id="sound-town" src="sounds/town.m4a" preload="auto"></audio>
+
+    <div class="crt" aria-hidden="true"></div>
+    <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+    <!-- TITLE SCREEN -->
     <div id="title-screen" class="title-screen">
-      <img id="smalls" class="logo" src="images/bitcoinlogo.webp" style="height: 300px;"/>
-        <h1 id="smalls" >Welcome to</h1>
-        <img id="smalls" src="images/title1.png" style="margin-bottom: 30px;"/>
+      <img class="logo" src="images/bitcoinlogo.webp" alt=""/>
+      <h1 class="welcome">Welcome to</h1>
+      <img class="title-img" src="images/title1.png" alt="The Bitcoin Trail"/>
+      <div class="title-columns">
         <form id="start-form">
-            <label for="player-name">Enter your nym:</label>
-            <input type="text" placeholder="Satoshi Nakamoto" autocomplete="off" id="player-name" required />
-            <label for="occupation">What kind of bitcoiner are you?</label>
-            <select id="occupation" required>
-                <option value="pleb">Pleb</option>
-                <option value="node_runner">Node Runner</option>
-                <option value="miner">Miner</option>
-                <option value="developer">Developer</option>
-                <option value="educator">Educator</option>
-                <option value="nomad">Nomad</option>
-                <option value="altcoiner">Altcoiner</option>
-            </select>
-            <button type="submit" >Start Journey</button>
+          <label for="player-name">Enter your nym:</label>
+          <div class="nym-row">
+            <input type="text" placeholder="Satoshi Nakamoto" autocomplete="off" id="player-name" maxlength="24" />
+            <button type="button" id="random-nym" title="Random nym">?</button>
+          </div>
+          <label for="occupation">What kind of bitcoiner are you?</label>
+          <select id="occupation" required>
+            <option value="pleb">Pleb</option>
+            <option value="node_runner">Node Runner</option>
+            <option value="miner">Miner</option>
+            <option value="developer">Developer</option>
+            <option value="educator">Educator</option>
+            <option value="nomad">Nomad</option>
+            <option value="altcoiner">Altcoiner</option>
+          </select>
+          <div id="occupation-info" class="occupation-info"></div>
+          <button type="submit" class="start-btn">Start Journey</button>
         </form>
-    </div>    
+        <div class="hall">
+          <div class="hall-title">Hall of HODL</div>
+          <ol id="high-scores" class="high-scores"></ol>
+          <div class="hall-title">Achievements <span id="ach-count"></span></div>
+          <div id="achievement-list" class="achievement-list"></div>
+        </div>
+      </div>
+      <div class="blink">Press Enter to begin</div>
+    </div>
+
+    <!-- TOP BAR -->
     <div id="top">
-		<div class="sn">
-			<a class="sn" href="https://stacker.news/r/jasonb">
-                SN
-			</a>
-		</div>
-		<button class="onesat" onclick="togglePrice()">1sat=1sat</button>
-        <button class="onesat"></button>
-	</div>
+      <a class="sn" href="https://stacker.news/r/jasonb" target="_blank" rel="noopener">SN</a>
+      <button class="onesat" id="ticker" onclick="togglePrice()">1sat=1sat</button>
+      <span class="player-tag" id="player-tag"></span>
+      <div class="top-buttons">
+        <button id="mute-btn" class="icon-btn" title="Mute (S)">SND:ON</button>
+      </div>
+    </div>
+
+    <!-- JOURNEY -->
     <div id="journey">
-        <div id="progress-area">
-            <img id="stackers" src="images/Nostrich1.png" style="width: 125px; height: 125px; margin-bottom: -20px;"/>
-            <img id="trees" src="images/Broadway3.png" style="width: 100%; height: 125px; overflow: hidden; border: lime solid 5px; box-shadow: 0 0 6px limegreen; border-radius: 5px;"/>
+      <div id="progress-area">
+        <div id="scene">
+          <img id="trees" src="images/Broadway3.png" alt=""/>
+          <img id="trees-color" src="images/Broadway2.png" alt=""/>
+          <div id="night"></div>
+          <div id="landmark-flag"></div>
+          <img id="stackers" src="images/Nostrich1.png" alt="Your stackers"/>
+          <div id="pause-banner" class="hidden">PAUSED</div>
         </div>
-        <div class="su-container">
-            <div id="stats-area">
-                <div class="stat">Block <span id="stat-block" class="stat-value"></span></div>
-                <div class="stat">Plebs <span id="stat-plebs" class="stat-value"></span></div>
-                <div class="stat">Ostriches <span id="stat-ostriches" class="stat-value"></span></div>
-                <div class="stat">Food <span id="stat-food" class="stat-value"></span></div>
-                <div class="stat">Sats <span id="stat-sats" class="stat-value"></span></div>
-                <div class="stat">Zappower <span id="stat-zappower" class="stat-value"></span></div>
-                <div class="stat">Weight <span id="stat-weight" class="stat-value"></span><span id="stat-capacity" class="stat-value"></span></div>
-                <div class="stat">Adoption <span id="stat-adoption" class="stat-value"></span></div>
-            </div>
-            <div class="updates-area" id="updates-area"></div>
+        <div id="trail">
+          <div id="trail-fill"></div>
+          <div id="trail-marks"></div>
         </div>
-      <div class="events">
-        <div id="shop" class="hidden">
-          <div id="withimage">
-            <img class="pic" src="images/bitcoinlogo.webp"/>
+        <div id="trail-info">
+          <span id="era"></span>
+          <span id="next-landmark"></span>
+        </div>
+      </div>
+
+      <div class="su-container">
+        <div id="stats-area">
+          <div class="stat">Block <span id="stat-block" class="stat-value"></span></div>
+          <div class="stat">Plebs <span id="stat-plebs" class="stat-value"></span></div>
+          <div class="stat">Ostriches <span id="stat-ostriches" class="stat-value"></span></div>
+          <div class="stat">Food <span id="stat-food" class="stat-value"></span></div>
+          <div class="stat">Sats <span id="stat-sats" class="stat-value"></span></div>
+          <div class="stat">Zappower <span id="stat-zappower" class="stat-value"></span></div>
+          <div class="stat">Weight <span id="stat-weight" class="stat-value"></span></div>
+          <div class="stat">Adoption <span id="stat-adoption" class="stat-value"></span></div>
+          <div class="stat">Morale <span id="stat-morale" class="stat-value"></span></div>
+          <div class="morale-bar"><div id="morale-fill"></div></div>
+        </div>
+        <div class="updates-area" id="updates-area" aria-live="polite"></div>
+      </div>
+
+      <div id="controls">
+        <div class="control">
+          <span class="control-label">Pace</span>
+          <button class="cycle" id="pace-btn" title="Change pace (P)"></button>
+        </div>
+        <div class="control">
+          <span class="control-label">Rations</span>
+          <button class="cycle" id="rations-btn" title="Change rations (R)"></button>
+        </div>
+        <button id="mine-btn" class="action" title="Mine a block (M)">Mine a block</button>
+        <button id="pause-btn" class="action" title="Pause (Space)">Pause</button>
+      </div>
+      <div class="hint">[Space] pause &middot; [M] mine &middot; [P] pace &middot; [R] rations &middot; [S] sound &middot; [1-4] choose</div>
+    </div>
+
+    <!-- MODAL FOR EVENTS -->
+    <div id="modal" class="hidden">
+      <div class="modal-box">
+
+        <div id="shop" class="panel hidden">
+          <div class="panel-title" id="shop-title">Trading Post</div>
+          <div class="withimage">
+            <img class="pic" src="images/bitcoinlogo.webp" alt=""/>
             <div id="prods"></div>
           </div>
-          <button>Leave to traverse the fiat wasteland.</button>
+          <div class="wallet">Your sats: <span id="shop-sats"></span></div>
+          <button id="leave-shop" class="option">Leave to traverse the fiat wasteland.</button>
         </div>
-        <div id="attack" class="hidden">
-          <div id="withimage">
-            <img class="pic" src="images/angry.jpeg"/>
+
+        <div id="attack" class="panel hidden">
+          <div class="panel-title" id="attack-title"></div>
+          <div class="withimage">
+            <img class="pic enemy" src="images/angry.jpeg" alt=""/>
             <div class="options">
-              <button id="fight">Orange pill that fool with sweet zaps!</button>
-              <button id="runaway">Run away</button>
+              <div id="attack-description"></div>
+              <button id="fight" class="option">1. Orange pill that fool with sweet zaps!</button>
+              <button id="bribe" class="option">2. Pay them off</button>
+              <button id="runaway" class="option">3. Run away</button>
             </div>
-          <div id="attack-description"></div>
           </div>
         </div>
-        <div id="tombstone" class="hidden">
+
+        <div id="choice" class="panel hidden">
+          <div class="panel-title" id="choice-title"></div>
+          <div id="choice-text"></div>
+          <div id="choice-options" class="options"></div>
+        </div>
+
+        <div id="minigame" class="panel hidden">
+          <div class="panel-title">Proof of Work</div>
+          <div id="mg-text">Hit SPACE or tap when the nonce lands under the difficulty target.</div>
+          <div id="mg-bar"><div id="mg-target"></div><div id="mg-cursor"></div></div>
+          <div id="mg-status"></div>
+          <button id="mg-hash" class="option">HASH!</button>
+        </div>
+
+        <div id="tombstone-wrap" class="panel hidden">
+          <div id="tombstone">
             <div id="epitaph"></div>
-            <div class="optionz">
-              <button id="payrespects">Pay your respects</button>
-              <button id="continue">Leave to traverse the fiat wasteland.</button>
-            </div>
-          <div id="tombstone-description"></div>
+          </div>
+          <div class="optionz">
+            <button id="payrespects" class="option">1. Pay your respects</button>
+            <button id="continue" class="option">2. Leave to traverse the fiat wasteland.</button>
+          </div>
         </div>
-        <div id="gameover" class="hidden">
-          <button id="startover" onClick="window.location.reload();">Play again?</button>
+
+        <div id="gameover" class="panel hidden">
+          <div class="panel-title" id="gameover-title"></div>
+          <div id="gameover-body"></div>
+          <div id="gameover-achievements"></div>
+          <div class="optionz row">
+            <button id="share" class="option">Copy brag</button>
+            <button id="startover" class="option">Play again?</button>
+          </div>
         </div>
-      </div>  
+
+      </div>
     </div>
-    <script src="js/Stackers.js"></script>
-    <script src="js/Event.js"></script>
-    <script src="js/UI.js"></script>
+
+    <div id="toast-layer" aria-hidden="true"></div>
+
     <script src="js/Bitcoiners.js"></script>
+    <script src="js/Stackers.js"></script>
     <script src="js/Sound.js"></script>
+    <script src="js/FX.js"></script>
+    <script src="js/Event.js"></script>
+    <script src="js/Achievements.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/Minigame.js"></script>
     <script src="js/Game.js"></script>
     <script src="js/OneSat.js"></script>
   </body>
