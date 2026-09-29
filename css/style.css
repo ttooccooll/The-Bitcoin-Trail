@@ -271,8 +271,12 @@ table.condition td:last-child {
 table.points .total td {
   border-top: 2px solid var(--phosphor);
 }
+table.topten {
+  font-size: 0.9em;
+}
 table.topten td {
   white-space: nowrap;
+  padding: 0 0.4em;
 }
 table.topten td:nth-child(2) {
   text-align: right;
